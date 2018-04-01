@@ -1,13 +1,7 @@
-/**
- *
- * Entry point for all routes
- *
- */
+const paymentApi = require('./payment');
 
-import api_v1 from './api_v1';
-import page from './page';
-
-export default {
-  api_v1,
-  page
+const configureRoutes = app => {
+  paymentApi(app);
 };
+
+module.exports = configureRoutes;

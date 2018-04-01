@@ -1,8 +1,16 @@
-import app from './app';
-import env from './config/env';
+const express = require('express');
 
-const server = app.listen(env.port, () => {
-  console.log(`${env.name} server is listening at port ${env.port}`);
+const SERVER_CONFIGS = require('./constants/server');
+
+const configureServer = require('./server');
+const configureRoutes = require('./routes');
+
+const app = express();
+
+configureServer(app);
+configureRoutes(app);
+
+app.listen(SERVER_CONFIGS.PORT, error => {
+  if (error) throw error;
+  console.log('Server running on port: ' + SERVER_CONFIGS.PORT);
 });
-
-export default server;
