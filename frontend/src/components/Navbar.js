@@ -61,12 +61,6 @@ class Nav extends React.Component {
             </div>
         </nav>
         <div className="row">
-          {/* <ModalSwitcher 
-            modals={{
-              [Example_modal]: Example_modal,
-              [other_example]: otherexamplemodal
-            }}
-          /> */}
           <Modal show={this.state.show} onHide={this.handleClose}>
               <div>
                   <Modal.Header closeButton>
