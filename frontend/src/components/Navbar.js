@@ -1,7 +1,8 @@
 import React from "react";
 import {Modal} from 'react-bootstrap';
 import { Input, FormBtn } from "../components/Form";
-// import Modal from "../components/Modal.js"
+// import Wrapper from '../components/Modals/ModalWrapper';
+
 
 class Nav extends React.Component {
   constructor(props, context) {
