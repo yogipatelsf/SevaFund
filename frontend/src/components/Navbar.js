@@ -62,10 +62,11 @@ class Nav extends React.Component {
         </nav>
         <div className="row">
           <Modal show={this.state.show} onHide={this.handleClose}>
-              <div>
+            <div className="row">
+              <div className="col-sm-6">
                   <Modal.Header closeButton>
                       <Modal.Title className="text-center">
-                          Sign up
+                          New Account
                       </Modal.Title>
                   </Modal.Header>
                   <Modal.Body>
@@ -102,6 +103,47 @@ class Nav extends React.Component {
                       </FormBtn>
                   </Modal.Footer>
               </div>
+              <div className="col-sm-6">
+                  <Modal.Header closeButton>
+                      <Modal.Title className="text-center">
+                          Sign In
+                      </Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                      <form>
+                          <p><strong>Email</strong></p>
+                          <Input
+                              value={this.state.email}
+                              onChange={this.handleInputChange}
+                              name="author"
+                              placeholder="Enter a valid email"
+                          />
+                          <p><strong>Username</strong></p>
+                          <Input
+                              value={this.state.username}
+                              onChange={this.handleInputChange}
+                              name="title"
+                              placeholder="Enter your username"
+                          />
+                          <p><strong>Password</strong></p>
+                          <Input
+                              value={this.state.password}
+                              onChange={this.handleInputChange}
+                              name="author"
+                              placeholder="Enter your password"
+                          />                                
+                      </form>
+                  </Modal.Body>
+                  <Modal.Footer>
+                      <FormBtn
+                          // disabled={!(this.state.username && this.state.password && this.state.email)}
+                          onClick={this.handleFormSubmit}
+                      >
+                          Create Account
+                      </FormBtn>
+                  </Modal.Footer>
+              </div>
+            </div>
           </Modal>
         </div>
       </div>
