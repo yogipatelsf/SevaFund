@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import SignUpModal from './Modal.js'
 import "./Navbar.css";
 
 class Navbar extends Component {
+
     render(){
         return(
             <div>
@@ -31,6 +33,7 @@ class Navbar extends Component {
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log-In / Sign-up</button>
                     </div>
                 </nav>
+                <SignUpModal/>
             </div>
         )
     }

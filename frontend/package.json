@@ -5,6 +5,7 @@
 	"dependencies": {
 		"axios": "^0.18.0",
 		"react": "^16.2.0",
+		"react-bootstrap": "^0.32.1",
 		"react-dom": "^16.2.0",
 		"react-scripts": "1.1.1",
 		"react-stripe-checkout": "^2.6.3"
