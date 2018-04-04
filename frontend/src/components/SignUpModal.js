@@ -5,41 +5,45 @@ import { Input, FormBtn } from "../components/Form";
 class SignUpModal extends React.Component {
     constructor(props, context) {
         super(props, context);
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
+        // this.handleShow = this.handleShow.bind(this);
+        // this.handleClose = this.handleClose.bind(this);
         this.state = { 
-            show: false 
+            showModal: true 
         };
     }
 
-    handleClose(){
-    this.setState({show:false});
-    }
+    // handleClose(){
+    // this.setState({show:false});
+    // }
 
-    handleShow(){
-    this.setState({show:true});
-    }
+    // handleShow(){
+    // this.setState({show:true});
+    // }
 
     handleFormSubmit = event =>{
     event.preventDefault();
     };
 
     render(){
-        const donorBtn = {
-            title: "Donor",
-            id: "donor-btn",
-            className: "btn btn-primary"
-        }
+        // const Login = {
+        //     title: "Donor",
+        //     id: "donor-btn",
+        //     className: "btn btn-primary"
+        // }
     
-        const charityBtn = {
-            title: "Charity",
-            id: "charity-btn",
-            className: "btn btn-primary"
-        }
-    
+        // const charityBtn = {
+        //     title: "Charity",
+        //     id: "charity-btn",
+        //     className: "btn btn-primary"
+        // }
+    console.log('props from signup', this.props)
         return(
             <div className="row">
-                <Modal show={this.state.show} onHide={this.handleClose}>
+                <Modal 
+                show={this.props.showing}
+                animation={false}
+                backdrop={false}
+                >
                     <div className="row">
                         <div className="col-sm-6">
                             <Modal.Header closeButton>
