@@ -18,3 +18,17 @@
  * });
  * export default mongoose.model('User', UserSchema);
  */
+
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema; 
+
+const CharitySchema = new Schema({
+	name: {
+		type: String,
+		required: true
+	}
+})
+
+const Charity = mongoose.model("Charities", CharitySchema)
+
+exports default Charity;
