@@ -16,35 +16,11 @@
  * mongoose.Promise = require('bluebird');
  */
 
-/*
- * Mysql
- * import mysql from 'mysql';
- * import env from './env';
- * const settings = {
- *  dev: {
- *    host: 'xxxx',
- *    user: 'xxxx',
- *    database: 'xxxxx'
- *  },
- *  production: {
- *    host: 'xxxx',
- *    user: 'xxxx',
- *    database: 'xxxxx'
- *  }
- * };
- * const pool = mysql.createPool(settings[env.name]);
- * const getMysqlConnection = (cb) {
- *  pool.getConnection((err, connection) => {
- *    if (err) throw err;
- *    cb(connection);
- *  });
- * }
- * export default getMysqlConnection;
- */
+// import env from './env'; 
+import mongoose from 'mongoose';
 
-/*
- * Or you can also use ORM:
- *
- *  - Bookshelf.js
- *  - Sequelize.js
- */
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/SevaFund";
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
+
+
