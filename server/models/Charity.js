@@ -13,7 +13,7 @@ const CharitySchema = new Schema({
 		type: Number
 	},
 	EthereumAddress:{
-		type: Number //
+		type: Number //what needs to be here?
 	},
 	DesiredItems:{
 		type: Array,
@@ -22,8 +22,11 @@ const CharitySchema = new Schema({
 	CurrentFunds:{
 		type: Number,
 	},
+	TargetFund:{
+		type: Number,
+	},
 	StripeInfo:{
-		type: Array,
+		type: Array, //what needs to be here?
 		default: []
 	}
 });
