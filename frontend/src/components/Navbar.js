@@ -19,6 +19,7 @@ class Navbar extends Component {
     render(){
         return(
             <div>
+                <SignUpModal showing={this.state.showModal}/>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <a className="navbar-brand" href="#"><h3>SevaFund</h3></a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +46,6 @@ class Navbar extends Component {
                         <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.handleShow}>Log-In / Sign-up</button>
                     </div>
                 </nav>
-                <SignUpModal showing={this.state.showModal}/>
             </div>
         )
     }
