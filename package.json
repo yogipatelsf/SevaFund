@@ -27,6 +27,7 @@
   "author": "Haochuan Liu<haochuan.liu@gmail.com>(https://haochuan.io)",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
     "compression": "^1.7.0",
     "cors": "^2.8.4",

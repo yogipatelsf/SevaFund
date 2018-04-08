@@ -13,7 +13,8 @@ const CharitySchema = new Schema({
 		type: Number
 		validate: {
 			validator: (input) => { //to check if the PO being entered is 10 digits long with numerical values
-				return /\d{10}/.test(input);
+				var reg =  /\d{10}/
+				return reg.test(input);
 			}, 
 			message: '{Value} is not a valid PO. Use 10 numerical digits only' 
 		},
