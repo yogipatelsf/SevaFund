@@ -11,6 +11,13 @@ const CharitySchema = new Schema({
 	},
 	PurchaseOrder:{
 		type: Number
+		validate: {
+			validator: (input) => { //to check if the PO being entered is 10 digits long with numerical values
+				return /\d{10}/.test(input);
+			}, 
+			message: '{Value} is not a valid PO. Use 10 numerical digits only' 
+		},
+		unique: true //we want the POs to be unique for each charity
 	},
 	EthereumAddress:{
 		type: Number //what needs to be here?
@@ -33,4 +40,4 @@ const CharitySchema = new Schema({
 
 const Charity = mongoose.model("Charities", CharitySchema);
 
-exports default Charity;
+module.exports = Charity;
