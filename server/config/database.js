@@ -17,9 +17,9 @@
  */
 
 // import env from './env'; 
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/SevaFund";
+const  MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/SevaFund";
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 

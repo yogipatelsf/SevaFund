@@ -30,4 +30,4 @@ const DonorSchema = new Schema({
 
 const Donor = mongoose.model("Donors", DonorSchema);
 
-exports default Donor;
+module.exports = Donor;

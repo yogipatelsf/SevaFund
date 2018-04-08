@@ -10,6 +10,7 @@ import path from 'path';
 import env from './config/env';
 import routes from './routes';
 
+const mongoose = require('mongoose');
 const app = express();
 
 /*==================================
@@ -23,6 +24,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // serve static files, this is for frontend React
 app.use('/static', express.static(path.join(__dirname, 'public', 'static')));
+
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/SevaFund";
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
+
 
 /*=====  End of Middleware  ======*/
 
@@ -45,6 +51,7 @@ app.use('/static', express.static(path.join(__dirname, 'public', 'static')));
 // Routes
 app.use('/api/v1', routes.api_v1);
 app.use('/page', routes.page);
+app.use(routes.mongoose);
 
 // Load React App
 // Serve HTML file for production
