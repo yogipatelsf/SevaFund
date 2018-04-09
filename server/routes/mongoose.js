@@ -5,6 +5,7 @@ const path = require('path');
 const request = require("request");
 const cheerio = require("cheerio");
 const mongoose = require('mongoose');
+const bodyParser = require("body-parser");
 
 router.get('/', function(req, res) {
 	console.log( 'message: ‘API Initialized!’');
@@ -19,20 +20,20 @@ router.get('/charities', (req, res) => {
 		})
 });
 
-router.get('/', (req,res) => {	
-})
+// router.get('/', (req,res) => {	
+// })
 
-router.get('/', (req,res) => {	
-})
+// router.get('/', (req,res) => {	
+// })
 
-router.get('/', (req,res) => {	
-})
+// router.get('/', (req,res) => {	
+// })
 
-router.get('/', (req,res) => {	
-})
+// router.get('/', (req,res) => {	
+// })
 
-router.get('/', (req,res) => {	
-})
+// router.get('/', (req,res) => {	
+// })
 
 
 

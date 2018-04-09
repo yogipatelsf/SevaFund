@@ -6,11 +6,12 @@ import favicon from 'serve-favicon';
 import helmet from 'helmet';
 import compression from 'compression';
 import path from 'path';
+import mongoose from 'mongoose';
 
 import env from './config/env';
 import routes from './routes';
 
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const app = express();
 
 /*==================================
@@ -27,8 +28,9 @@ app.use('/static', express.static(path.join(__dirname, 'public', 'static')));
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/SevaFund";
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
-
+mongoose.connect(MONGODB_URI, {useMongoClient: true});
+console.log("mongoose status code representations: 0 = disconnected/1 = connected/ 2 = connecting/ 3 = disconnecting. ")
+console.log("mongoose connection status: Current status is: ", mongoose.connection.readyState);
 
 /*=====  End of Middleware  ======*/
 
@@ -51,7 +53,7 @@ mongoose.connect(MONGODB_URI);
 // Routes
 app.use('/api/v1', routes.api_v1);
 app.use('/page', routes.page);
-app.use(routes.mongoose);
+app.use('/charities',routes.mongoose);
 
 // Load React App
 // Serve HTML file for production
