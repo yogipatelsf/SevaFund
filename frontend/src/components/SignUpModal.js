@@ -32,7 +32,7 @@ class SignUpModal extends React.Component {
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
                 >
-                    <DialogTitle id="form-dialog-title">Log In/Sign Up</DialogTitle>
+                    <DialogTitle id="form-dialog-title">Log In</DialogTitle>
                     <DialogContent>
                         <DialogContentText>
                             Login Below
@@ -44,7 +44,25 @@ class SignUpModal extends React.Component {
                             id="login-email"
                             label="email address"
                             type="email"
-                            fullWidth
+                        />
+                        <br/>
+                        <TextField 
+                            autoFocus
+                            ref="username"
+                            margin="dense"
+                            id="login-email"
+                            label="username"
+                            type="username"
+                        />
+                        <br/>
+                        <TextField
+                            autoFocus
+                            ref="login-password"
+                            margin="dense"
+                            label="password"
+                            hintText="Password Field"
+                            floatingLabelText="Password"
+                            type="password"
                         />
                     </DialogContent>
                     <DialogActions>
