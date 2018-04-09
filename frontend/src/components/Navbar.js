@@ -3,23 +3,21 @@ import SignUpModal from './SignUpModal.js'
 import "./Navbar.css";
 
 class Navbar extends Component {
-    constructor(props, context) {
-        super(props, context);
-        this.handleShow = this.handleShow.bind(this);
-        this.state = { 
-            showModal: false 
-        };
-    }
+    // state = {
+    //     open: false,
+    // };
 
-    handleShow(){
-        console.log("sup");
-        this.setState({showModal: true});
-    }
+    // handleClickOpen = () => {
+    //     this.setState({ open: true });
+    // };
+
+    // handleClose = () => {
+    //     this.setState({ open: false });
+    // };
 
     render(){
         return(
             <div>
-                <SignUpModal showing={this.state.showModal}/>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <a className="navbar-brand" href="#"><h3>SevaFund</h3></a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +41,7 @@ class Navbar extends Component {
                                 </div>
                             </li>
                         </ul>
-                        <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.handleShow}>Log-In / Sign-up</button>
+                        <SignUpModal/>
                     </div>
                 </nav>
             </div>

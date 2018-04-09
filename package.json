@@ -27,10 +27,13 @@
   "author": "Haochuan Liu<haochuan.liu@gmail.com>(https://haochuan.io)",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/icons": "^1.0.0-beta.42",
     "body-parser": "^1.17.2",
     "compression": "^1.7.0",
     "express": "^4.15.3",
     "helmet": "^3.8.0",
+    "material-ui": "^1.0.0-beta.41",
+    "material-ui-next": "^1.0.0-beta.41",
     "morgan": "^1.8.2",
     "react-bootstrap": "^0.32.1",
     "serve-favicon": "^2.4.3"
