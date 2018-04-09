@@ -34,9 +34,6 @@ class SignUpModal extends React.Component {
                 >
                     <DialogTitle id="form-dialog-title">Log In</DialogTitle>
                     <DialogContent>
-                        <DialogContentText>
-                            Login Below
-                        </DialogContentText>
                         <TextField 
                             autoFocus
                             ref="email"
