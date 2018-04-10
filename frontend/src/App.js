@@ -14,12 +14,12 @@ class App extends Component {
         <h1 className="text-center">SevaFund Market Place</h1>
         <CharityList />
         <p className="App-intro">	
-               <Checkout	
-                name={'The Road to learn React'}	
-                    description={'Only the Book'}	
-                    amount={1}	
-                />	
-            </p>
+            <Checkout	
+            name={'The Road to learn React'}	
+                description={'Only the Book'}	
+                amount={1}	
+            />	
+        </p>
       </div>
     );
   }

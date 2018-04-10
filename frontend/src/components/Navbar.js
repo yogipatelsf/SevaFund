@@ -3,18 +3,6 @@ import SignUpModal from './SignUpModal.js'
 import "./Navbar.css";
 
 class Navbar extends Component {
-    // state = {
-    //     open: false,
-    // };
-
-    // handleClickOpen = () => {
-    //     this.setState({ open: true });
-    // };
-
-    // handleClose = () => {
-    //     this.setState({ open: false });
-    // };
-
     render(){
         return(
             <div>
