@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
-const path = require('path');
-const request = require("request");
-const cheerio = require("cheerio");
 const mongoose = require('mongoose');
+// const path = require('path');
+// const request = require("request");
 const bodyParser = require("body-parser");
 
 router.get('/', function(req, res) {
