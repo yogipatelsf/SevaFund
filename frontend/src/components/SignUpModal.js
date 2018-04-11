@@ -36,7 +36,7 @@ class SignUpModal extends React.Component {
     render() {
         return (
             <div>
-                <Button onClick={this.handleClickOpen}>Log In / Sign Up</Button>
+                <RaisedButton onClick={this.handleClickOpen}>Log In / Sign Up</RaisedButton>
                 <Dialog
                     open={this.state.open}
                     onClose={this.handleClose}
