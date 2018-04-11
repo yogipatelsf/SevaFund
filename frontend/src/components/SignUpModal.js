@@ -1,137 +1,68 @@
 import React from 'react';
-import {Modal} from 'react-bootstrap';
-import { Input, FormBtn } from "../components/Form";
+import Button from 'material-ui/Button';
+import Dialog, {
+    DialogContent,
+    DialogTitle,
+} from 'material-ui/Dialog';
 
 class SignUpModal extends React.Component {
-    constructor(props, context) {
-        super(props, context);
-        // this.handleShow = this.handleShow.bind(this);
-        // this.handleClose = this.handleClose.bind(this);
-        this.state = { 
-            showModal: true 
-        };
-    }
-
-    // handleClose(){
-    // this.setState({show:false});
-    // }
-
-    // handleShow(){
-    // this.setState({show:true});
-    // }
-
-    handleFormSubmit = event =>{
-    event.preventDefault();
+    state = {
+        open: false,
+        logins: {}
     };
 
-    render(){
-        // const Login = {
-        //     title: "Donor",
-        //     id: "donor-btn",
-        //     className: "btn btn-primary"
-        // }
+    handleClickOpen = () => {
+        this.setState({ open: true });
+    };
+
+    handleClose = () => {
+        this.setState({ open: false });
+    };
+
+    //to pass the Login data
+    createLogin(event){
+        event.preventDefault();
+        console.log("This is me logging in");
+        const login = {
+            email: this.email.value,
+            username: this.username.value,
+            password: this.password.value,
+            status: this.status.value,
+        }
+        console.log(login);
+        this.loginForm.reset();
+    }
     
-        // const charityBtn = {
-        //     title: "Charity",
-        //     id: "charity-btn",
-        //     className: "btn btn-primary"
-        // }
-    console.log('props from signup', this.props)
-        return(
-            <div className="row">
-                <Modal 
-                show={this.props.showing}
-                animation={false}
-                backdrop={false}
+    render() {
+        return (
+            <div>
+                <Button onClick={this.handleClickOpen}>Log In / Sign Up</Button>
+                <Dialog
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                    aria-labelledby="form-dialog-title"
                 >
-                    <div className="row">
-                        <div className="col-sm-6">
-                            <Modal.Header closeButton>
-                                <Modal.Title className="text-center">
-                                    New Account
-                                </Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                <form>
-                                    <p><strong>Username</strong></p>
-                                    <Input
-                                        value={this.state.username}
-                                        onChange={this.handleInputChange}
-                                        name="title"
-                                        placeholder="Enter your username"
-                                    />
-                                    <p><strong>Password</strong></p>
-                                    <Input
-                                        value={this.state.password}
-                                        onChange={this.handleInputChange}
-                                        name="author"
-                                        placeholder="Enter your password"
-                                    />
-                                    <p><strong>Email</strong></p>
-                                    <Input
-                                        value={this.state.email}
-                                        onChange={this.handleInputChange}
-                                        name="author"
-                                        placeholder="Enter a valid email"
-                                    />                                
-                                </form>
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <FormBtn
-                                    // disabled={!(this.state.username && this.state.password && this.state.email)}
-                                    onClick={this.handleFormSubmit}
-                                >
-                                    Create Account
-                                </FormBtn>
-                            </Modal.Footer>
-                        </div>
-                        <div className="col-sm-6">
-                            <Modal.Header closeButton>
-                                <Modal.Title className="text-center">
-                                    Sign In
-                                </Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                <form>
-                                    <p><strong>Email</strong></p>
-                                    <Input
-                                        value={this.state.email}
-                                        onChange={this.handleInputChange}
-                                        name="author"
-                                        placeholder="Enter a valid email"
-                                    />
-                                    <p><strong>Username</strong></p>
-                                    <Input
-                                        value={this.state.username}
-                                        onChange={this.handleInputChange}
-                                        name="title"
-                                        placeholder="Enter your username"
-                                    />
-                                    <p><strong>Password</strong></p>
-                                    <Input
-                                        value={this.state.password}
-                                        onChange={this.handleInputChange}
-                                        name="author"
-                                        placeholder="Enter your password"
-                                    />                                
-                                </form>
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <FormBtn
-                                    // disabled={!(this.state.username && this.state.password && this.state.email)}
-                                    onClick={this.handleFormSubmit}
-                                >
-                                    Create Account
-                                </FormBtn>
-                            </Modal.Footer>
-                        </div>
-                    </div>
-                </Modal>
+                    <DialogTitle id="form-dialog-title">Welcome to SevaFund</DialogTitle>
+                    <DialogContent>
+                        <form ref={(input) => this.loginForm = input} className="login-edit" onSubmit={(e) => this.createLogin(e)}>
+                            <input ref={(input) => this.email = input} type="text" placeholder="email"/>
+                            <br/><br/>
+                            <input ref={(input) => this.username = input} type="text" placeholder="username"/>
+                            <br/><br/>
+                            <select ref={(input) => this.status = input}>
+                                <option value="Login">Login</option>
+                                <option value="Sign-Up">Sign Up</option>
+                            </select>
+                            <br/><br/>
+                            <input ref={(input) => this.password = input} type="text" placeholder="password"/>
+                            <br/><br/>
+                            <button type="submit">Login</button>
+                        </form>
+                    </DialogContent>
+                </Dialog>
             </div>
         )
-    }
+    } 
 }
-
-
 
 export default SignUpModal;
