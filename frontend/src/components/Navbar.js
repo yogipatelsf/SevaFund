@@ -3,19 +3,6 @@ import SignUpModal from './SignUpModal.js'
 import "./Navbar.css";
 
 class Navbar extends Component {
-    constructor(props, context) {
-        super(props, context);
-        this.handleShow = this.handleShow.bind(this);
-        this.state = { 
-            showModal: false 
-        };
-    }
-
-    handleShow(){
-        console.log("sup");
-        this.setState({showModal: true});
-    }
-
     render(){
         return(
             <div>
@@ -42,10 +29,9 @@ class Navbar extends Component {
                                 </div>
                             </li>
                         </ul>
-                        <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.handleShow}>Log-In / Sign-up</button>
+                        <SignUpModal/>
                     </div>
                 </nav>
-                <SignUpModal showing={this.state.showModal}/>
             </div>
         )
     }
