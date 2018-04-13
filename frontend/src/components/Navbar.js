@@ -1,41 +1,53 @@
 import React, { Component } from "react";
-import SignUpModal from './SignUpModal.js'
+import SignUpModal from "./SignUpModal.js";
 import "./Navbar.css";
 
 class Navbar extends Component {
-    render(){
-        return(
-            <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <a className="navbar-brand" href="#"><h3>SevaFund</h3></a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-            
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
-                            <li className="nav-item active">
-                                <a className="nav-link" href="#">About</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#" onClick={this.handleShow}>Account</a>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dashboard</a>
-                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a className="dropdown-item" href="#">Donor</a>
-                                    <a className="dropdown-item" href="#">Charity</a>
-                                </div>
-                            </li>
-                        </ul>
-                        <SignUpModal/>
-                    </div>
-                </nav>
-            </div>
-        )
-    }
-    
+  render() {
+    return (
+      <div>
+        <nav>
+          <div className="nav-wrapper light-blue accent-2">
+            <a href="/home" className="brand-logo">
+              SevaFund
+            </a>
+            <a href="#!" data-target="mobile-demo" className="sidenav-trigger">
+              <i className="material-icons">menu</i>
+            </a>
+            <ul className="right hide-on-med-and-down">
+              <a
+                className="waves-effect waves-light btn modal-trigger"
+                href="/newPo"
+              >
+                New Purchase Order
+              </a>
+              <li>
+                <a href="/dashboard">Dashboard</a>
+              </li>
+              <li>
+                <a href="/openPo">Open PO's</a>
+              </li>
+              <li>
+                <SignUpModal id="sign-up" className="light-blue accent-2" />
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <ul id="mobile-demo" className="sidenav">
+          <a
+            className="waves-effect waves-light btn modal-trigger"
+            href="/newPo"
+          >
+            New Purchase Order
+          </a>
+          <li>
+            <a href="/dashboard">Dashboard</a>
+          </li>
+          <li />
+        </ul>
+      </div>
+    );
+  }
 }
 
 export default Navbar;
