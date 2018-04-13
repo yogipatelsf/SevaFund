@@ -1,0 +1,10 @@
+.col-sm-2 {
+    max-width: 25rem;
+    display: inline-table;
+    flex-wrap: wrap;
+}
+
+.title {
+    padding-top: 2%;
+    text-align: center;
+}
