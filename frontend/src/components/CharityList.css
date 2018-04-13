@@ -1,15 +1,11 @@
-.row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.charity-cards {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 450px 450px;
+  grid-template-rows: 500px 500px;
+  flex-wrap: wrap;
 }
 
-.column {
-    flex-basis: 100%;
+div.card {
+  margin: 5px 5px 0 0;
 }
-
-/* @media screen and (min-width: 800px) {
-    .column {
-        flex: 1;
-    }
-} */
