@@ -58,7 +58,12 @@ const About = () => (
 
       <div className="row">
         <h5 className="title">Looking Forward</h5>
-        <p></p>
+        <p>Our vision moving forward is quite simple:</p>
+        <ol>
+          <li>Deploy to the Ethereum network</li>
+          <li>Incorporate the use of cryptocurrencies as a form of payment</li>
+          <li>Continue to network and reach out to willing charities for new POs</li>
+        </ol>
       </div>
   
     </div>    
