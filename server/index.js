@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const SERVER_CONFIGS = require('./constants/server');
-
+const db = require('./models');
 const configureServer = require('./server');
 const configureRoutes = require('./routes');
 const mongoose = require('mongoose');
@@ -15,6 +15,18 @@ mongoose.connect(MONGODB_URI, () =>{
   
 });
 
+db.Charity.create({
+	Name: "Test Charity"
+	})
+	.then(results => {
+		console.log("creating db entry")
+	})
+
+db.Charity.find({})
+	.then(results => {
+		console.log("logging db search results")
+		console.log(results)
+	})
 
 configureServer(app);
 configureRoutes(app);

@@ -4,6 +4,7 @@ import Dialog, {
     DialogContent,
     DialogTitle,
 } from 'material-ui/Dialog';
+import axios from 'axios';
 
 class SignUpModal extends React.Component {
     state = {
@@ -31,6 +32,25 @@ class SignUpModal extends React.Component {
         }
         console.log(login);
         this.loginForm.reset();
+
+        axios.get('/charities')
+            .then(function(response){
+                console.log(response.data)
+            })
+            .catch(function(error){
+                console.log(error)
+            })
+
+        // axios.post('/donors',
+        // {
+        //     login
+        // })
+        //     .then(function(response){
+        //         console.log(response.data)
+        //     })
+        //     .catch(function(error){
+        //         console.log(error)
+        //     })
     }
     
     render() {
