@@ -10,9 +10,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 ReactDOM.render(
 	<Router>
 		<div>
-			<Route exact path = '/' component={App} />
-			<Route path = '/charities' component={App} />
-			<Route path = '/donors' component={App} />
+			<App />
 		</div>
 	</Router>,
 	document.getElementById('root')
