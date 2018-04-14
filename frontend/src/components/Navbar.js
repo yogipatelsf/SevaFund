@@ -27,9 +27,9 @@ class Navbar extends Component {
               <li>
                 <a href="/openPo">Open PO's</a>
               </li>
-              <li>
+              {/* <li>
                 <SignUpModal id="sign-up" className="light-blue accent-2" />
-              </li>
+              </li> */}
             </ul>
           </div>
         </nav>
