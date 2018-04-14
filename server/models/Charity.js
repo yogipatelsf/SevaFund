@@ -1,34 +1,58 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema; 
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const CharitySchema = new Schema({
-	Name: {
-		type: String,
-		required: true
-	},
-	Supplier:{
-		type: String,
-	},
-	PurchaseOrder:{
-		type: Number,
-	},
-	EthereumAddress:{
-		type: Number //what needs to be here?
-	},
-	DesiredItems:{
-		type: Array,
-		default: []
-	},
-	CurrentFunds:{
-		type: Number,
-	},
-	TargetFund:{
-		type: Number,
-	},
-	StripeInfo:{
-		type: Array, //what needs to be here?
-		default: []
-	}
+  Password: {
+    type: String,
+    required: true,
+    maxLength: 20,
+    minLength: 6
+  },
+  Email: {
+    type: String,
+    required: true,
+    unique: true,
+    validate: {
+      validator: email => {
+        //to check for email address format
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+      },
+      message: "{Value} is not a valid email."
+    }
+  },
+  charityName: {
+    type: String,
+    required: true
+  },
+  PurchaseOrder: {
+    type: Array
+  },
+  EthereumAddress: {
+    type: String
+  },
+  CharityInfo: {
+    Address: {
+      required: true,
+      type: String
+    },
+    City: {
+      required: true,
+      type: String
+    },
+    State: {
+      required: true,
+      type: String
+    },
+    ZipCode: {
+      required: true,
+      type: Number
+    },
+    PhoneNumber: {
+      required: true,
+      type: Number
+    }
+  }
 });
 
 const Charity = mongoose.model("Charities", CharitySchema);
