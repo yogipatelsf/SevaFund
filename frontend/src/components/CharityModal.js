@@ -144,7 +144,6 @@ class CharityModal extends React.Component {
                                 ref={(input) => this.email = input} 
                                 type="text" placeholder="Email" 
                             />
-                            <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
                             <input ref={(input) => this.street = input} type="text" placeholder="Street name"/>
                             <input ref={(input) => this.city = input} type="text" placeholder="City"/>
                             <input ref={(input) => this.zipcode = input} type="text" placeholder="Zipcode"/>
@@ -153,6 +152,8 @@ class CharityModal extends React.Component {
                                 type="text" 
                                 placeholder="Phone number"
                             />
+                            <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
+                            <input ref={(input) => this.password = input} type="text" placeholder="Confirm password"/>
                             <br/><br/>
                             <button type="submit">Sign Up</button>
                             {/* <button onSubmit={(e) => this.createSignUp(e)} type="submit">SignUp</button> */}
