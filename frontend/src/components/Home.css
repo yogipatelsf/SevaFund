@@ -1,0 +1,30 @@
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.new-user {
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.home {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    padding: 2%;
+}
+
+.donor, .charity {
+    border: 3px solid gray;
+    text-align: center;
+}
+
+.donor:hover, .charity:hover {
+    background-color: lightslategray;
+}
