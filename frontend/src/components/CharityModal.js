@@ -68,12 +68,12 @@ class CharityModal extends React.Component {
                             <input ref={(input) => this.username = input} type="text" placeholder="username"/>
                             <br/>
                             {/* <input placeholder="hello"/> */}
-                            <SelectField
+                            <select
                                 ref={(input) => this.status = input}
                             >
-                                <MenuItem value={1} primaryText="Login" />
+                                <option value={1} primaryText="Login" />
                                 {/* <MenuItem value={2}>Sign Up</MenuItem> */}
-                            </SelectField>
+                            </select>
                             <br/>
                             <input ref={(input) => this.password = input} type="text" placeholder="password"/>
                             <br/>

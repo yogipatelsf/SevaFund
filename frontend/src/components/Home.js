@@ -1,5 +1,6 @@
 import React from "react";
-import SignUpModal from "./SignUpModal.js";
+import DonorModal from "./DonorModal.js";
+import CharityModal from "./CharityModal.js"
 import "./Home.css";
 
 const Home = () => (
@@ -7,7 +8,7 @@ const Home = () => (
     <h1>Welcome to Seva Fund!</h1>
     
     <div className="container new-user">
-        <h5 className="white-text">New user? Click on the link below to get started.</h5>
+        <h5 className="white-text">How can we help you? Please pick from the options below</h5>
     </div>
 
     <div className="home">
