@@ -6,10 +6,17 @@ import App from "./App";
 import NotFound from "./components/NotFound";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
-  document.getElementById("root")
+	<Router>
+		<div>
+			<Route exact path = '/' component={App} />
+			<Route path = '/charities' component={App} />
+			<Route path = '/donors' component={App} />
+		</div>
+	</Router>,
+	document.getElementById('root')
 );
+
+
 // registerServiceWorker();

@@ -10,7 +10,7 @@ const CharitySchema = new Schema({
 		type: String,
 	},
 	PurchaseOrder:{
-		type: Number
+		type: Number,
 	},
 	EthereumAddress:{
 		type: Number //what needs to be here?
@@ -33,4 +33,4 @@ const CharitySchema = new Schema({
 
 const Charity = mongoose.model("Charities", CharitySchema);
 
-exports default Charity;
+module.exports = Charity;
