@@ -4,11 +4,15 @@ import Dialog, {
     DialogContent,
     DialogTitle,
 } from 'material-ui/Dialog';
+import Select from 'material-ui/Select';
+import MenuItem from 'material-ui/MenuItem';
 
-class DonorModal extends React.Component {
+class CharityModal extends React.Component {
     state = {
         open: false,
-        logins: {}
+        signUp: false,
+        logIn: false,
+        status: ''
     };
 
     handleClickOpen = () => {
@@ -16,21 +20,43 @@ class DonorModal extends React.Component {
     };
 
     handleClose = () => {
-        this.setState({ open: false });
+        this.setState({ status: 0 });
     };
 
+    handleChange = (event) => {
+        console.log('name & event', event.target.value);
+        const {name, value} = event.target;
+        this.setState({ [name]: value });
+    };
+
+    handleLogs = event => {
+        const {name, value} = event.target;
+        
+    }
+
     //to pass the Login data
-    createLogin(event){
+    logIn(event){
         event.preventDefault();
         console.log("This is me logging in");
         const login = {
             email: this.email.value,
-            username: this.username.value,
             password: this.password.value,
-            status: this.status.value,
         }
         console.log(login);
         this.loginForm.reset();
+    }
+
+    //to pass the SignUp data
+    createSignUp(event){
+        event.preventDefault();
+        console.log("This is me signing up");
+        const signUp = {
+            email: this.email.value,
+            password: this.password.value,
+            confirmPassword: this.password.value,
+        }
+        console.log(signUp);
+        this.signUpForm.reset();
     }
     
     render() {
@@ -51,27 +77,61 @@ class DonorModal extends React.Component {
 
         return (
             <div>
-                <Button onClick={this.handleClickOpen}>Log In / Sign Up</Button>
-                
+                {/* <Button onClick={this.handleClickOpen}>Sign Up</Button>
+                <Button onClick={this.handleClickOpen}>Log In</Button> */}
+                <Select
+                    native
+                    value={this.state.status}
+                    ref={(input) => this.status = input}
+                    name="status"
+                    onChange={this.handleChange}
+                >
+                    <option value="" default>Choose one</option>
+                    <option value="1" onClick={this.handleLogInOpen}>Log In</option>
+                    <option value="2" onClick={this.handleSignUpOpen}>Sign Up</option>
+                </Select>
+
+                {/* TO LOG IN */}
                 <Dialog
-                    open={this.state.open}
-                    
+                    open={this.state.status === "1"}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
                     fullWidth={true}
+                    className="charity-log-in"
                 >
-                    <DialogTitle style={styleTop}>Welcome to SevaFund</DialogTitle>
+                <DialogTitle style={styleTop}>Log In</DialogTitle>
+                <DialogContent style={styleBottom}>
+                    <form ref={(input) => this.loginForm = input} className="signUp-edit" onSubmit={(e) => this.logIn(e)}>
+                        <input ref={(input) => this.email = input} type="text" placeholder="Email"/>
+                        <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
+                        <br/><br/>
+                        <button type="submit">Log In</button>
+                    </form>
+                </DialogContent>
+                </Dialog>
+
+                {/* TO SIGN UP */}
+                <Dialog
+                    open={this.state.status === "2"}
+                    onClose={this.handleClose}
+                    aria-labelledby="form-dialog-title"
+                    fullWidth={true}
+                    className="charity-sign-up"
+                >
+                    <DialogTitle style={styleTop}>Sign Up</DialogTitle>
                     <DialogContent style={styleBottom}>
-                        <form ref={(input) => this.loginForm = input} className="login-edit" onSubmit={(e) => this.createLogin(e)}>
-                            <input ref={(input) => this.email = input} type="text" placeholder="email"/>
-                            <input ref={(input) => this.username = input} type="text" placeholder="username"/>
-                            <select ref={(input) => this.status = input}>
-                                <option value="Login">Login</option>
-                                <option value="Sign-Up">Sign Up</option>
-                            </select>
-                            <input ref={(input) => this.password = input} type="text" placeholder="password"/>
+                        <form ref={(input) => this.signUpForm = input} className="signUp-edit" onSubmit={(e) => this.createSignUp(e)}>
+                           
+                            <input 
+                                ref={(input) => this.email = input} 
+                                type="text" placeholder="Email" 
+                            />
+                            <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
+                            <input ref={(input) => this.password = input} type="text" placeholder="Confirm password"/>
+                            
                             <br/><br/>
-                            <button type="submit">Login</button>
+                            <button type="submit">Sign Up</button>
+                            {/* <button onSubmit={(e) => this.createSignUp(e)} type="submit">SignUp</button> */}
                         </form>
                     </DialogContent>
                 </Dialog>
@@ -81,10 +141,4 @@ class DonorModal extends React.Component {
     } 
 }
 
-// SignUpModal.propTypes = {
-//     classes: PropTypes.object.isRequired,
-// };
-
-// const SimpleModalWrapped = withStyles(styles)(SignUpModal);
-
-export default DonorModal;
+export default CharityModal;
