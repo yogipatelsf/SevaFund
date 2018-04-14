@@ -65,7 +65,7 @@ class Card extends Component {
                     className="waves-effect waves-light btn light-blue accent-2"
                     name={"The Road to learn React"}
                     description={"Only the Book"}
-                    amount={1}
+                    amount={donation * 100}
                   />
                 </div>
               </form>
