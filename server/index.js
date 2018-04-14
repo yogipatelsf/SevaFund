@@ -28,8 +28,10 @@ db.Charity.find({})
 		console.log(results)
 	})
 
-configureServer(app);
+// configureServer(app);
+// app.use(require('cors')());
 configureRoutes(app);
+
 
 app.listen(SERVER_CONFIGS.PORT, error => {
   if (error) throw error;
