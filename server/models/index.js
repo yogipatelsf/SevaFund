@@ -1,4 +1,5 @@
 module.exports = {
   Charity: require("./Charity"),
-  Donor: require("./Donor")
+  Donor: require("./Donor"),
+  PoInfo: require("./PoInfo")
 };
