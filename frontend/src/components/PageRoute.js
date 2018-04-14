@@ -12,10 +12,10 @@ const OpenPo = () => <CharityList />;
 
 const PageRoute = () => (
   <Switch>
-    <Route path="/home" component={NewHo} />
+    <Route path="/newHo" component={NewHo} />
     <Route path="/newPo" component={NewPo} />
     <Route path="/openPo" component={OpenPo} />
-    <Route path="/about" component={AboutUs} />
+    <Route path="/home" component={AboutUs} />
   </Switch>
 );
 

@@ -5,10 +5,10 @@ import "./Home.css";
 
 const Home = () => (
 <div className="container">
-    <h1>Welcome to Seva Fund!</h1>
+    <h1>Welcome to SevaFund</h1>
     
     <div className="container new-user">
-        <h5 className="white-text">How can we help you? Please pick from the options below</h5>
+        <h5 className="white-text">How can we help you? Please choose from the options below</h5>
     </div>
 
     <div className="home">
@@ -16,7 +16,7 @@ const Home = () => (
             <div className="message">
                 <h3>Donor</h3>
                 <DonorModal/>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam quam soluta consectetur voluptas eveniet inventore! Quae nam veniam commodi fugit.</p>
+                <p>You want to check out our current, open projects and want to see the difference you make in an open, transparent way.</p>
             </div>
         </div>
 
@@ -24,7 +24,7 @@ const Home = () => (
             <div className="message">
                 <h3>Charity</h3>
                 <CharityModal />
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam quam soluta consectetur voluptas eveniet inventore! Quae nam veniam commodi fugit.</p>
+                <p>You want your company to join the esteemed list of nonprofits that are witnessing the untapped well of investors and donors who want to see a new age of transparency.</p>
             </div>
         </div>
 

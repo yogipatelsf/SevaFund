@@ -38,7 +38,8 @@ class DonorModal extends React.Component {
             borderTop: '5px solid #40c4ff',
             borderRight: '5px solid #40c4ff',
             borderLeft: '5px solid #40c4ff',
-            backgroundColor: 'white'
+            backgroundColor: 'white',
+            textAlign: 'center'
         }
 
         const styleBottom = {
@@ -50,7 +51,7 @@ class DonorModal extends React.Component {
 
         return (
             <div>
-                <Button onClick={this.handleClickOpen}>Donor Log In / Sign Up</Button>
+                <Button onClick={this.handleClickOpen}>Log In / Sign Up</Button>
                 
                 <Dialog
                     open={this.state.open}
@@ -63,14 +64,11 @@ class DonorModal extends React.Component {
                     <DialogContent style={styleBottom}>
                         <form ref={(input) => this.loginForm = input} className="login-edit" onSubmit={(e) => this.createLogin(e)}>
                             <input ref={(input) => this.email = input} type="text" placeholder="email"/>
-                            <br/><br/>
                             <input ref={(input) => this.username = input} type="text" placeholder="username"/>
-                            <br/><br/>
                             <select ref={(input) => this.status = input}>
                                 <option value="Login">Login</option>
                                 <option value="Sign-Up">Sign Up</option>
                             </select>
-                            <br/><br/>
                             <input ref={(input) => this.password = input} type="text" placeholder="password"/>
                             <br/><br/>
                             <button type="submit">Login</button>

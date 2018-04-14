@@ -26,7 +26,13 @@ class CharityModal extends React.Component {
         event.preventDefault();
         console.log("This is me logging in");
         const login = {
+            name: this.name.value,
             email: this.email.value,
+            street: this.street.value,
+            city: this.city.value,
+            state: this.state.value,
+            zipcode: this.zipcode.value,
+            phoneNumber: this.phoneNumber.value,
             password: this.password.value,
             status: this.status.value,
         }
@@ -39,7 +45,8 @@ class CharityModal extends React.Component {
             borderTop: '5px solid #40c4ff',
             borderRight: '5px solid #40c4ff',
             borderLeft: '5px solid #40c4ff',
-            backgroundColor: 'white'
+            backgroundColor: 'white',
+            textAlign: 'center'
         }
 
         const styleBottom = {
@@ -51,7 +58,7 @@ class CharityModal extends React.Component {
 
         return (
             <div>
-                <Button onClick={this.handleClickOpen}>Charity Log In / Sign Up</Button>
+                <Button onClick={this.handleClickOpen}>Log In / Sign Up</Button>
                 
                 <Dialog
                     open={this.state.open}
@@ -63,20 +70,30 @@ class CharityModal extends React.Component {
                     <DialogTitle style={styleTop}>Welcome to SevaFund</DialogTitle>
                     <DialogContent style={styleBottom}>
                         <form ref={(input) => this.loginForm = input} className="login-edit" onSubmit={(e) => this.createLogin(e)}>
-                            <input ref={(input) => this.email = input} type="text" placeholder="email"/>
-                            <br/>
-                            <input ref={(input) => this.username = input} type="text" placeholder="username"/>
-                            <br/>
-                            {/* <input placeholder="hello"/> */}
+                            <input 
+                                ref={(input) => this.name = input} 
+                                type="text" placeholder="Charity name"
+                            />
+                            <input 
+                                ref={(input) => this.email = input} 
+                                type="text" placeholder="Email"
+                            />
+                            <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
+                            <input ref={(input) => this.street = input} type="text" placeholder="Street name"/>
+                            <input ref={(input) => this.city = input} type="text" placeholder="City"/>
+                            <input ref={(input) => this.zipcode = input} type="text" placeholder="Zipcode"/>
+                            <input 
+                                ref={(input) => this.phoneNumber = input} 
+                                type="text" 
+                                placeholder="Phone number"
+                            />
                             <select
                                 ref={(input) => this.status = input}
                             >
                                 <option value={1} primaryText="Login" />
-                                {/* <MenuItem value={2}>Sign Up</MenuItem> */}
+                                <option value={2} primatyText="Signup" />
                             </select>
-                            <br/>
-                            <input ref={(input) => this.password = input} type="text" placeholder="password"/>
-                            <br/>
+                            <br/><br/>
                             <button type="submit">Login</button>
                         </form>
                     </DialogContent>
@@ -86,11 +103,5 @@ class CharityModal extends React.Component {
         );
     } 
 }
-
-// SignUpModal.propTypes = {
-//     classes: PropTypes.object.isRequired,
-// };
-
-// const SimpleModalWrapped = withStyles(styles)(SignUpModal);
 
 export default CharityModal;
