@@ -4,13 +4,15 @@ import Dialog, {
     DialogContent,
     DialogTitle,
 } from 'material-ui/Dialog';
-import SelectField from 'material-ui/SelectField';
+import Select from 'material-ui/Select';
 import MenuItem from 'material-ui/MenuItem';
 
 class CharityModal extends React.Component {
     state = {
         open: false,
-        logins: {}
+        signUp: false,
+        logIn: false,
+        status: ''
     };
 
     handleClickOpen = () => {
@@ -18,14 +20,46 @@ class CharityModal extends React.Component {
     };
 
     handleClose = () => {
-        this.setState({ open: false });
+        this.setState({ status: 0 });
     };
 
+    handleChange = (event) => {
+        console.log('name & event', event.target.value);
+        const {name, value} = event.target;
+        this.setState({ [name]: value });
+    };
+
+    handleLogs = event => {
+        const {name, value} = event.target;
+        
+    }
+
+    // handleSignUpOpen = () => {
+    //     this.setState({signUp: true});
+    // }
+
+    // handleLogInOpen = () => {
+    //     this.setState({logIn: true});
+    // }
+
     //to pass the Login data
-    createLogin(event){
+    logIn(event){
         event.preventDefault();
         console.log("This is me logging in");
         const login = {
+            
+            email: this.email.value,
+            password: this.password.value,
+        }
+        console.log(login);
+        this.loginForm.reset();
+    }
+
+    //to pass the SignUp data
+    createSignUp(event){
+        event.preventDefault();
+        console.log("This is me signing up");
+        const signUp = {
             name: this.name.value,
             email: this.email.value,
             street: this.street.value,
@@ -34,10 +68,10 @@ class CharityModal extends React.Component {
             zipcode: this.zipcode.value,
             phoneNumber: this.phoneNumber.value,
             password: this.password.value,
-            status: this.status.value,
+            confirmPassword: this.password.value,
         }
-        console.log(login);
-        this.loginForm.reset();
+        console.log(signUp);
+        this.signUpForm.reset();
     }
     
     render() {
@@ -58,25 +92,57 @@ class CharityModal extends React.Component {
 
         return (
             <div>
-                <Button onClick={this.handleClickOpen}>Log In / Sign Up</Button>
-                
+                {/* <Button onClick={this.handleClickOpen}>Sign Up</Button>
+                <Button onClick={this.handleClickOpen}>Log In</Button> */}
+                <Select
+                    native
+                    value={this.state.status}
+                    ref={(input) => this.status = input}
+                    name="status"
+                    onChange={this.handleChange}
+                >
+                    <option value="" default>Choose one</option>
+                    <option value="1" onClick={this.handleLogInOpen}>Log In</option>
+                    <option value="2" onClick={this.handleSignUpOpen}>Sign Up</option>
+                </Select>
+
+                {/* TO LOG IN */}
                 <Dialog
-                    open={this.state.open}
-                    
+                    open={this.state.status === "1"}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
                     fullWidth={true}
+                    className="charity-log-in"
                 >
-                    <DialogTitle style={styleTop}>Welcome to SevaFund</DialogTitle>
+                <DialogTitle style={styleTop}>Log In</DialogTitle>
+                <DialogContent style={styleBottom}>
+                    <form ref={(input) => this.loginForm = input} className="signUp-edit" onSubmit={(e) => this.logIn(e)}>
+                        <input ref={(input) => this.email = input} type="text" placeholder="Email"/>
+                        <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
+                        <br/><br/>
+                        <button type="submit">Log In</button>
+                    </form>
+                </DialogContent>
+                </Dialog>
+
+                {/* TO SIGN UP */}
+                <Dialog
+                    open={this.state.status === "2"}
+                    onClose={this.handleClose}
+                    aria-labelledby="form-dialog-title"
+                    fullWidth={true}
+                    className="charity-sign-up"
+                >
+                    <DialogTitle style={styleTop}>Sign Up</DialogTitle>
                     <DialogContent style={styleBottom}>
-                        <form ref={(input) => this.loginForm = input} className="login-edit" onSubmit={(e) => this.createLogin(e)}>
+                        <form ref={(input) => this.signUpForm = input} className="signUp-edit" onSubmit={(e) => this.createSignUp(e)}>
                             <input 
                                 ref={(input) => this.name = input} 
                                 type="text" placeholder="Charity name"
                             />
                             <input 
                                 ref={(input) => this.email = input} 
-                                type="text" placeholder="Email"
+                                type="text" placeholder="Email" 
                             />
                             <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
                             <input ref={(input) => this.street = input} type="text" placeholder="Street name"/>
@@ -87,14 +153,9 @@ class CharityModal extends React.Component {
                                 type="text" 
                                 placeholder="Phone number"
                             />
-                            <select
-                                ref={(input) => this.status = input}
-                            >
-                                <option value={1} primaryText="Login" />
-                                <option value={2} primatyText="Signup" />
-                            </select>
                             <br/><br/>
-                            <button type="submit">Login</button>
+                            <button type="submit">Sign Up</button>
+                            {/* <button onSubmit={(e) => this.createSignUp(e)} type="submit">SignUp</button> */}
                         </form>
                     </DialogContent>
                 </Dialog>
