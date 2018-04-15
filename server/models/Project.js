@@ -3,12 +3,20 @@ import { SchemaType } from "mongoose";
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const PoInfoSchema = new Schema({
+const ProjectSchema = new Schema({
   _id: Schema.Types.ObjectId,
   charity: { type: Schema.Types.ObjectId, ref: "Charity" },
   donors: [{ type: Schema.Types.ObjectId, ref: "Donor" }],
   SupplierName: {
     required: true,
+    type: String
+  },
+  supp_eth_address:{
+     required: false, //needs to be true
+     type: String
+  },
+  contract_address:{
+    required: false, //needs to be true
     type: String
   },
   Amount: {
@@ -32,6 +40,6 @@ const PoInfoSchema = new Schema({
   }
 });
 
-const PoInfo = mongoose.model("PoInfo", PoInfoSchema);
+const Project = mongoose.model("Project", ProjectSchema);
 
-module.export = PoInfo;
+module.export = Project;
