@@ -45,7 +45,7 @@ class DonorModal extends React.Component {
     //to pass the Login data
     logIn(event){
         event.preventDefault();
-        console.log("This is me logging in");
+        console.log("This is a donor logging in");
         const login = {
             email: this.email.value,
             password: this.password.value,
@@ -57,7 +57,7 @@ class DonorModal extends React.Component {
     //to pass the SignUp data
     createSignUp(event){
         event.preventDefault();
-        console.log("This is me signing up");
+        console.log("This is a donor signing up");
         const signUp = {
             email: this.email.value,
             password: this.password.value,
@@ -82,6 +82,10 @@ class DonorModal extends React.Component {
             borderLeft: '5px solid #40c4ff',
             backgroundColor: 'white'
         }
+        
+        const margin = {
+            margin: 20,
+        };
 
         return (
             <div>
@@ -91,7 +95,8 @@ class DonorModal extends React.Component {
                         onClick={this.handleLogInOpen}
                         variant="raised"
                         color="primary"
-                        className="login-button"
+                        className="login-button light-blue accent-2"
+                        style={margin}
                     >
                         Log In
                     </Button>
@@ -100,8 +105,9 @@ class DonorModal extends React.Component {
                         native
                         onClick={this.handleSignUpOpen}
                         variant="raised"
-                        color="warning"
-                        className="signup-button"
+                        color="default"
+                        className="signup-button light-blue accent-2"
+                        style={margin}
                     >
                         Sign Up
                     </Button>

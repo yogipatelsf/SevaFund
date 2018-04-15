@@ -22,11 +22,11 @@ class CharityModal extends React.Component {
 
     handleSignUpOpen = () => {
         this.setState({ signUp: true });
-    }
+    };
 
     handleLogInOpen = () => {
         this.setState({ logIn: true });
-    }
+    };
 
     handleClose = () => {
         this.setState({ open: false, signUp: false, logIn: false});
@@ -41,24 +41,24 @@ class CharityModal extends React.Component {
     handleLogs = event => {
         const {name, value} = event.target;
         
-    }
+    };
 
     //to pass the Login data
     logIn(event){
         event.preventDefault();
-        console.log("This is me logging in");
+        console.log("This is a charity logging in");
         const login = {
             email: this.email.value,
             password: this.password.value,
         }
         console.log(login);
         this.loginForm.reset();
-    }
+    };
 
     //to pass the SignUp data
     createSignUp(event){
         event.preventDefault();
-        console.log("This is me signing up");
+        console.log("This is a charity signing up");
         const signUp = {
             name: this.name.value,
             email: this.email.value,
@@ -72,7 +72,7 @@ class CharityModal extends React.Component {
         }
         console.log(signUp);
         this.signUpForm.reset();
-    }
+    };
     
     render() {
         const styleTop = {
@@ -81,14 +81,18 @@ class CharityModal extends React.Component {
             borderLeft: '5px solid #40c4ff',
             backgroundColor: 'white',
             textAlign: 'center'
-        }
+        };
 
         const styleBottom = {
             borderBottom: '5px solid #40c4ff',
             borderRight: '5px solid #40c4ff',
             borderLeft: '5px solid #40c4ff',
             backgroundColor: 'white'
-        }
+        };
+
+        const margin = {
+            margin: 20,
+        };
 
         return (
             <div>
@@ -98,17 +102,20 @@ class CharityModal extends React.Component {
                         onClick={this.handleLogInOpen}
                         variant="raised"
                         color="primary"
-                        className="login-button"
+                        className="login-button light-blue accent-2"
+                        label="Log In"
+                        style={margin}
                     >
                         Log In
                     </Button>
-                    
                     <Button
                         native
                         onClick={this.handleSignUpOpen}
                         variant="raised"
-                        color="warning"
-                        className="signup-button"
+                        color="default"
+                        className="signup-button light-blue accent-2"
+                        label="Sign Up"
+                        style={margin}
                     >
                         Sign Up
                     </Button>
