@@ -7,7 +7,7 @@ import Dialog, {
 import Select from 'material-ui/Select';
 import MenuItem from 'material-ui/MenuItem';
 
-class CharityModal extends React.Component {
+class DonorModal extends React.Component {
     state = {
         open: false,
         signUp: false,
@@ -18,6 +18,14 @@ class CharityModal extends React.Component {
     handleClickOpen = () => {
         this.setState({ open: true });
     };
+    
+    handleSignUpOpen = () => {
+        this.setState({ signUp: true });
+    }
+
+    handleLogInOpen = () => {
+        this.setState({ logIn: true });
+    }
 
     handleClose = () => {
         this.setState({ status: 0 });
@@ -77,9 +85,9 @@ class CharityModal extends React.Component {
 
         return (
             <div>
-                {/* <Button onClick={this.handleClickOpen}>Sign Up</Button>
-                <Button onClick={this.handleClickOpen}>Log In</Button> */}
-                <Select
+                <Button onClick={this.handleClickOpen}>Sign Up</Button>
+                <Button onClick={this.handleClickOpen}>Log In</Button>
+                {/* <Select
                     native
                     value={this.state.status}
                     ref={(input) => this.status = input}
@@ -89,7 +97,7 @@ class CharityModal extends React.Component {
                     <option value="" default>Choose one</option>
                     <option value="1" onClick={this.handleLogInOpen}>Log In</option>
                     <option value="2" onClick={this.handleSignUpOpen}>Sign Up</option>
-                </Select>
+                </Select> */}
 
                 {/* TO LOG IN */}
                 <Dialog
@@ -141,4 +149,4 @@ class CharityModal extends React.Component {
     } 
 }
 
-export default CharityModal;
+export default DonorModal;

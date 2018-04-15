@@ -6,6 +6,7 @@ import Dialog, {
 } from 'material-ui/Dialog';
 import Select from 'material-ui/Select';
 import MenuItem from 'material-ui/MenuItem';
+import './CharityModal.css'
 
 class CharityModal extends React.Component {
     state = {
@@ -19,8 +20,16 @@ class CharityModal extends React.Component {
         this.setState({ open: true });
     };
 
+    handleSignUpOpen = () => {
+        this.setState({ signUp: true });
+    }
+
+    handleLogInOpen = () => {
+        this.setState({ logIn: true });
+    }
+
     handleClose = () => {
-        this.setState({ status: 0 });
+        this.setState({ open: false, signUp: false, logIn: false});
     };
 
     handleChange = (event) => {
@@ -34,20 +43,11 @@ class CharityModal extends React.Component {
         
     }
 
-    // handleSignUpOpen = () => {
-    //     this.setState({signUp: true});
-    // }
-
-    // handleLogInOpen = () => {
-    //     this.setState({logIn: true});
-    // }
-
     //to pass the Login data
     logIn(event){
         event.preventDefault();
         console.log("This is me logging in");
         const login = {
-            
             email: this.email.value,
             password: this.password.value,
         }
@@ -92,23 +92,32 @@ class CharityModal extends React.Component {
 
         return (
             <div>
-                {/* <Button onClick={this.handleClickOpen}>Sign Up</Button>
-                <Button onClick={this.handleClickOpen}>Log In</Button> */}
-                <Select
-                    native
-                    value={this.state.status}
-                    ref={(input) => this.status = input}
-                    name="status"
-                    onChange={this.handleChange}
-                >
-                    <option value="" default>Choose one</option>
-                    <option value="1" onClick={this.handleLogInOpen}>Log In</option>
-                    <option value="2" onClick={this.handleSignUpOpen}>Sign Up</option>
-                </Select>
+                <div className="charity-login-signup-buttons">
+                    <Button
+                        native
+                        onClick={this.handleLogInOpen}
+                        variant="raised"
+                        color="primary"
+                        className="login-button"
+                    >
+                        Log In
+                    </Button>
+                    
+                    <Button
+                        native
+                        onClick={this.handleSignUpOpen}
+                        variant="raised"
+                        color="warning"
+                        className="signup-button"
+                    >
+                        Sign Up
+                    </Button>
+                </div>
+                
 
                 {/* TO LOG IN */}
                 <Dialog
-                    open={this.state.status === "1"}
+                    open={this.state.logIn}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
                     fullWidth={true}
@@ -127,7 +136,7 @@ class CharityModal extends React.Component {
 
                 {/* TO SIGN UP */}
                 <Dialog
-                    open={this.state.status === "2"}
+                    open={this.state.signUp}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
                     fullWidth={true}
