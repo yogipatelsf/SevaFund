@@ -4,8 +4,8 @@ import Dialog, {
     DialogContent,
     DialogTitle,
 } from 'material-ui/Dialog';
-import Select from 'material-ui/Select';
-import MenuItem from 'material-ui/MenuItem';
+// import Select from 'material-ui/Select';
+// import MenuItem from 'material-ui/MenuItem';
 import './CharityModal.css'
 
 class CharityModal extends React.Component {

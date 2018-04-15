@@ -4,8 +4,8 @@ import Dialog, {
     DialogContent,
     DialogTitle,
 } from 'material-ui/Dialog';
-import Select from 'material-ui/Select';
-import MenuItem from 'material-ui/MenuItem';
+// import Select from 'material-ui/Select';
+import './DonorModal.css';
 
 class DonorModal extends React.Component {
     state = {
@@ -28,7 +28,7 @@ class DonorModal extends React.Component {
     }
 
     handleClose = () => {
-        this.setState({ status: 0 });
+        this.setState({ open: false, signUp: false, logIn: false});
     };
 
     handleChange = (event) => {
@@ -85,8 +85,28 @@ class DonorModal extends React.Component {
 
         return (
             <div>
-                <Button onClick={this.handleClickOpen}>Sign Up</Button>
-                <Button onClick={this.handleClickOpen}>Log In</Button>
+                <div className="donor-login-signup-buttons">
+                    <Button
+                        native
+                        onClick={this.handleLogInOpen}
+                        variant="raised"
+                        color="primary"
+                        className="login-button"
+                    >
+                        Log In
+                    </Button>
+                    
+                    <Button
+                        native
+                        onClick={this.handleSignUpOpen}
+                        variant="raised"
+                        color="warning"
+                        className="signup-button"
+                    >
+                        Sign Up
+                    </Button>
+                </div>
+
                 {/* <Select
                     native
                     value={this.state.status}
@@ -101,15 +121,15 @@ class DonorModal extends React.Component {
 
                 {/* TO LOG IN */}
                 <Dialog
-                    open={this.state.status === "1"}
+                    open={this.state.logIn}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
                     fullWidth={true}
-                    className="charity-log-in"
+                    className="donor-log-in"
                 >
                 <DialogTitle style={styleTop}>Log In</DialogTitle>
                 <DialogContent style={styleBottom}>
-                    <form ref={(input) => this.loginForm = input} className="signUp-edit" onSubmit={(e) => this.logIn(e)}>
+                    <form ref={(input) => this.loginForm = input} className="login-edit" onSubmit={(e) => this.logIn(e)}>
                         <input ref={(input) => this.email = input} type="text" placeholder="Email"/>
                         <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
                         <br/><br/>
@@ -120,11 +140,11 @@ class DonorModal extends React.Component {
 
                 {/* TO SIGN UP */}
                 <Dialog
-                    open={this.state.status === "2"}
+                    open={this.state.signUp}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
                     fullWidth={true}
-                    className="charity-sign-up"
+                    className="donor-sign-up"
                 >
                     <DialogTitle style={styleTop}>Sign Up</DialogTitle>
                     <DialogContent style={styleBottom}>
