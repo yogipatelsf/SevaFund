@@ -11,9 +11,8 @@ const dbApi = app => {
 		db.Charity.find({})
 			.then(results => {
 				// console.log(" get response sent")
-				res.send(results);
-			})
-	
+				res.json(results);
+			})	
 	});
 	
 	app.post('/donors', (req, res) => {

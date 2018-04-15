@@ -46,6 +46,7 @@ app.use('/static', express.static(path.join(__dirname, 'public', 'static')));
 app.use(routes.router)
 app.use('/api/v1', routes.api_v1);
 app.use('/page', routes.page);
+// app.use("/api", apiRoutes);
 
 
 // Load React App

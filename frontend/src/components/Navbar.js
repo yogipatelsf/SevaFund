@@ -11,7 +11,7 @@ class Navbar extends Component {
             <a href="/about" className="brand-logo">
               SevaFund
             </a>
-            <a href="#!" data-target="mobile-demo" className="sidenav-trigger">
+            <a href="" data-target="mobile-demo" className="sidenav-trigger">
               <i className="material-icons">menu</i>
             </a>
             <ul className="right hide-on-med-and-down">
@@ -22,18 +22,12 @@ class Navbar extends Component {
                 New Purchase Order
               </a>
               <li>
-                <a href="/dashboard">Dashboard</a>
-              </li>
-              <li>
                 <a href="/openPo">Open PO's</a>
               </li>
-              {/* <li>
-                <SignUpModal id="sign-up" className="light-blue accent-2" />
-              </li> */}
             </ul>
           </div>
         </nav>
-        <ul id="mobile-demo" className="sidenav">
+        <ul className="sidenav" id="mobile-demo">
           <a
             className="waves-effect waves-light btn modal-trigger"
             href="/newPo"
@@ -41,9 +35,11 @@ class Navbar extends Component {
             New Purchase Order
           </a>
           <li>
-            <a href="/dashboard">Dashboard</a>
+            <a href="/about">About</a>
           </li>
-          <li />
+          <li>
+            <a href="/openPo">Open PO's</a>
+          </li>
         </ul>
       </div>
     );

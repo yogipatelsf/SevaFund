@@ -22,13 +22,13 @@ db.Charity.create({
 		console.log("creating db entry")
 	})
 
-db.Charity.find({})
-	.then(results => {
-		console.log("logging db search results")
-		console.log(results)
-	})
+// db.Charity.find({})
+// 	.then(results => {
+// 		console.log("logging db search results")
+// 		console.log(results)
+// 	})
 
-// configureServer(app);
+configureServer(app);
 // app.use(require('cors')());
 configureRoutes(app);
 

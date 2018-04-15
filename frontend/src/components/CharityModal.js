@@ -169,7 +169,9 @@ class CharityModal extends React.Component {
                                 placeholder="Phone number"
                             />
                             <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
-                            <input ref={(input) => this.password = input} type="text" placeholder="Confirm password"/>
+
+                            <input ref={(input) => this.confirmPassword = input} type="text" placeholder="Confirm Password"/>
+                            
                             <br/><br/>
                             <button type="submit">Sign Up</button>
                             {/* <button onSubmit={(e) => this.createSignUp(e)} type="submit">SignUp</button> */}
