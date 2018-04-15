@@ -5,7 +5,3 @@
   grid-template-rows: 500px 500px;
   flex-wrap: wrap;
 }
-
-div.card {
-  margin: 5px 5px 0 0;
-}
