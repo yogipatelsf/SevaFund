@@ -1,10 +1,21 @@
-.col-sm-2 {
-    max-width: 25rem;
-    display: inline-table;
-    flex-wrap: wrap;
+.container-b {
+  display: grid;
+  grid-gap: 7px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .title {
-    padding-top: 2%;
-    text-align: center;
+  padding-top: 2%;
+  text-align: center;
+}
+
+.image-border {
+  width: 70%;
+  height: 65%;
+  border-radius: 50%;
+  border: 0.5px solid black;
+}
+
+p {
+  font-size: 1.19rem;
 }

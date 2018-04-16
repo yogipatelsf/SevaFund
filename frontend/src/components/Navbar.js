@@ -8,7 +8,7 @@ class Navbar extends Component {
       <div>
         <nav>
           <div className="nav-wrapper light-blue accent-2">
-            <a href="/about" className="brand-logo">
+            <a href="/" className="brand-logo">
               SevaFund
             </a>
             <a href="" data-target="mobile-demo" className="sidenav-trigger">
@@ -21,6 +21,9 @@ class Navbar extends Component {
               >
                 New Purchase Order
               </a>
+              <li>
+                <a href="/about">Who we are</a>
+              </li>
               <li>
                 <a href="/openPo">Open PO's</a>
               </li>
