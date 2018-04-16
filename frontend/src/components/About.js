@@ -60,12 +60,12 @@ const About = () => (
       </div>
       <div className="fourth-text">
         <p>
-          Upon submission of donation, the information would communicate with,
-          and update, a Solidity powered smart contract via a Web3 library.
-          After multiple donations, and a 100% target-reach, a project would
-          then be disabled, and the payment would go straight to the supplier.
+          Upon submission of donation, the information communicates with,
+          and updates, a Solidity powered smart contract via a Web3 library.
+          After multiple donations, and a 100% target-reach, a project will
+          then be disabled, and the collected funds will go straight to the supplier.
           It is then the supplier's responsibility to fulfill their commitment
-          to the charity, thus taking money out of the charitiy's hands. This
+          to the charity, thus taking money out of the charity's hands. This
           undeniably brings transparency, and furthers a campaign of
           anti-corruption, to the world of nonprofits via the permanent general
           ledger of the Etherum blockchain.
