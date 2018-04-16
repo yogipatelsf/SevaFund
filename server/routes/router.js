@@ -61,14 +61,9 @@ const dbApi = app => {
 		.catch(err => res.status(422).json(err));
 	})
 
-
-
 	return app
 
 }
 
-
-
 module.exports = dbApi;
-
 //https://appdividend.com/2017/06/28/mern-stack-tutorial/

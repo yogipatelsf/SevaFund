@@ -55,6 +55,11 @@
   grid-gap: 7px;
   grid-template-columns: repeat(3, 1fr);
 }
+
+h5 {
+  text-align: center;
+}
+
 .title {
   padding-top: 2%;
   text-align: center;
