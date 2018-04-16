@@ -4,52 +4,52 @@ const Schema = mongoose.Schema;
 const CharitySchema = new Schema({
   Password: {
     type: String,
-    required: true,
+    // required: true,
     maxLength: 20,
     minLength: 6
   },
   Email: {
     type: String,
-    required: true,
-    unique: true,
-    validate: {
-      validator: email => {
-        //to check for email address format
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-      },
-      message: "{Value} is not a valid email."
-    }
+    // required: true,
+    //  unique: true,
+    // validate: {
+    //   validator: email => {
+    //     //to check for email address format
+    //     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //     return re.test(email);
+    //   },
+    //   message: "{Value} is not a valid email."
+    // }
   },
   charityName: {
     type: String,
-    required: true
+    // required: true
   },
   PurchaseOrder: {
     type: Array
   },
-  EthereumAddress: {
+  char_eth_Address: {
     type: String
   },
   CharityInfo: {
     Address: {
-      required: true,
+      // required: true,
       type: String
     },
     City: {
-      required: true,
+      // required: true,
       type: String
     },
     State: {
-      required: true,
+      // required: true,
       type: String
     },
     ZipCode: {
-      required: true,
+      // required: true,
       type: Number
     },
     PhoneNumber: {
-      required: true,
+      // required: true,
       type: Number
     }
   }

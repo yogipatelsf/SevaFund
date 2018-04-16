@@ -25,7 +25,7 @@ const DonorSchema = new Schema({
     type: Array,
     default: []
   },
-  EthereumAddress: {
+  don_eth_address: {
     type: String
   }
 });

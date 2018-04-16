@@ -4,8 +4,9 @@ import Dialog, {
     DialogContent,
     DialogTitle,
 } from 'material-ui/Dialog';
-import Select from 'material-ui/Select';
-import MenuItem from 'material-ui/MenuItem';
+// import Select from 'material-ui/Select';
+// import MenuItem from 'material-ui/MenuItem';
+import './CharityModal.css'
 
 class CharityModal extends React.Component {
     state = {
@@ -19,8 +20,16 @@ class CharityModal extends React.Component {
         this.setState({ open: true });
     };
 
+    handleSignUpOpen = () => {
+        this.setState({ signUp: true });
+    };
+
+    handleLogInOpen = () => {
+        this.setState({ logIn: true });
+    };
+
     handleClose = () => {
-        this.setState({ status: 0 });
+        this.setState({ open: false, signUp: false, logIn: false});
     };
 
     handleChange = (event) => {
@@ -32,33 +41,24 @@ class CharityModal extends React.Component {
     handleLogs = event => {
         const {name, value} = event.target;
         
-    }
-
-    // handleSignUpOpen = () => {
-    //     this.setState({signUp: true});
-    // }
-
-    // handleLogInOpen = () => {
-    //     this.setState({logIn: true});
-    // }
+    };
 
     //to pass the Login data
     logIn(event){
         event.preventDefault();
-        console.log("This is me logging in");
+        console.log("This is a charity logging in");
         const login = {
-            
             email: this.email.value,
             password: this.password.value,
         }
         console.log(login);
         this.loginForm.reset();
-    }
+    };
 
     //to pass the SignUp data
     createSignUp(event){
         event.preventDefault();
-        console.log("This is me signing up");
+        console.log("This is a charity signing up");
         const signUp = {
             name: this.name.value,
             email: this.email.value,
@@ -72,7 +72,7 @@ class CharityModal extends React.Component {
         }
         console.log(signUp);
         this.signUpForm.reset();
-    }
+    };
     
     render() {
         const styleTop = {
@@ -81,34 +81,50 @@ class CharityModal extends React.Component {
             borderLeft: '5px solid #40c4ff',
             backgroundColor: 'white',
             textAlign: 'center'
-        }
+        };
 
         const styleBottom = {
             borderBottom: '5px solid #40c4ff',
             borderRight: '5px solid #40c4ff',
             borderLeft: '5px solid #40c4ff',
             backgroundColor: 'white'
-        }
+        };
+
+        const margin = {
+            margin: 20,
+        };
 
         return (
             <div>
-                {/* <Button onClick={this.handleClickOpen}>Sign Up</Button>
-                <Button onClick={this.handleClickOpen}>Log In</Button> */}
-                <Select
-                    native
-                    value={this.state.status}
-                    ref={(input) => this.status = input}
-                    name="status"
-                    onChange={this.handleChange}
-                >
-                    <option value="" default>Choose one</option>
-                    <option value="1" onClick={this.handleLogInOpen}>Log In</option>
-                    <option value="2" onClick={this.handleSignUpOpen}>Sign Up</option>
-                </Select>
+                <div className="charity-login-signup-buttons">
+                    <Button
+                        native
+                        onClick={this.handleLogInOpen}
+                        variant="raised"
+                        color="primary"
+                        className="login-button light-blue accent-2"
+                        label="Log In"
+                        style={margin}
+                    >
+                        Log In
+                    </Button>
+                    <Button
+                        native
+                        onClick={this.handleSignUpOpen}
+                        variant="raised"
+                        color="default"
+                        className="signup-button light-blue accent-2"
+                        label="Sign Up"
+                        style={margin}
+                    >
+                        Sign Up
+                    </Button>
+                </div>
+                
 
                 {/* TO LOG IN */}
                 <Dialog
-                    open={this.state.status === "1"}
+                    open={this.state.logIn}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
                     fullWidth={true}
@@ -127,7 +143,7 @@ class CharityModal extends React.Component {
 
                 {/* TO SIGN UP */}
                 <Dialog
-                    open={this.state.status === "2"}
+                    open={this.state.signUp}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
                     fullWidth={true}
@@ -153,7 +169,9 @@ class CharityModal extends React.Component {
                                 placeholder="Phone number"
                             />
                             <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
+
                             <input ref={(input) => this.confirmPassword = input} type="text" placeholder="Confirm Password"/>
+                            
                             <br/><br/>
                             <button type="submit">Sign Up</button>
                             {/* <button onSubmit={(e) => this.createSignUp(e)} type="submit">SignUp</button> */}
