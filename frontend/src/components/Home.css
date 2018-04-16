@@ -1,13 +1,28 @@
-.container {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 h1 {
     text-align: center;
+    color: #F8F8FF;
+    /* color: white; */
+    /* color: #8cff1a; */
+}
+
+h3 {
+    color: #F8F8FF;
+} 
+
+h3
+p, 
+.new-user {
+    font-family: 'Raleway', sans-serif;
+}
+
+p, 
+.message {
+    padding: 5px;
 }
 
 .new-user {
-    color: white;
+    color: #F8F8FF;
+    /* color: white; */
     text-align: center;
     padding-bottom: 10px;
     margin-bottom: 20px;

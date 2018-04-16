@@ -84,7 +84,7 @@ class DonorModal extends React.Component {
         }
         
         const margin = {
-            margin: 20,
+            margin: 10,
         };
 
         return (
@@ -113,18 +113,6 @@ class DonorModal extends React.Component {
                     </Button>
                 </div>
 
-                {/* <Select
-                    native
-                    value={this.state.status}
-                    ref={(input) => this.status = input}
-                    name="status"
-                    onChange={this.handleChange}
-                >
-                    <option value="" default>Choose one</option>
-                    <option value="1" onClick={this.handleLogInOpen}>Log In</option>
-                    <option value="2" onClick={this.handleSignUpOpen}>Sign Up</option>
-                </Select> */}
-
                 {/* TO LOG IN */}
                 <Dialog
                     open={this.state.logIn}
@@ -139,7 +127,7 @@ class DonorModal extends React.Component {
                         <input ref={(input) => this.email = input} type="text" placeholder="Email"/>
                         <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
                         <br/><br/>
-                        <button type="submit">Log In</button>
+                        <button type="submit" className="login-submit">Log In</button>
                     </form>
                 </DialogContent>
                 </Dialog>
@@ -164,8 +152,8 @@ class DonorModal extends React.Component {
                             <input ref={(input) => this.password = input} type="text" placeholder="Confirm password"/>
                             
                             <br/><br/>
-                            <button type="submit">Sign Up</button>
-                            {/* <button onSubmit={(e) => this.createSignUp(e)} type="submit">SignUp</button> */}
+                            <p>By creating an account you agree to our <a href="/about">Terms & Privacy</a></p>
+                            <button type="submit" className="signup-submit">Sign Up</button>
                         </form>
                     </DialogContent>
                 </Dialog>
