@@ -22,7 +22,7 @@ class Navbar extends Component {
                 New Purchase Order
               </a>
               <li>
-                <a href="/openPo">Open PO's</a>
+                <a href="/api/projects">Open PO's</a>
               </li>
             </ul>
           </div>
