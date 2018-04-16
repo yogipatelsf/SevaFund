@@ -7,7 +7,7 @@ const CharitySchema = new Schema({
   },
   Email: {
     type: String,
-    unique: true,
+    // unique: true
   },
   charityName: {
     type: String,

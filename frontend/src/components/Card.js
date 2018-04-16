@@ -31,14 +31,14 @@ class Card extends Component {
   };
 
   render() {
-    const { title, img, content, website, amount } = this.props;
+    const { title, image, content, website, amount } = this.props;
     const { donation, funded } = this.state;
     // const percentage = int()
 
     return (
       <div className="card">
         <div className="card-image waves-effect waves-block waves-light">
-          <img className="activator" src={img} alt={title} />
+          <img className="activator" src={image} alt={title} />
         </div>
         <div className="card-content">
           <span className="card-title activator grey-text text-darken-4">
