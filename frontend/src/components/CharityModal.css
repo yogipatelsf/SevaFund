@@ -6,3 +6,23 @@
 .signup-button {
     font-family: 'Raleway', sans-serif;
 }
+
+.login-submit {
+    color: white;
+    background-color: #4CAF50;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    width: 100%;
+    opacity: 0.9;    
+}
+
+.signup-submit {
+    color: white;
+    background-color: #4CAF50;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    width: 100%;
+    opacity: 0.9;
+}

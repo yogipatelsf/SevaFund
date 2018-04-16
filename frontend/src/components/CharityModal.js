@@ -136,7 +136,7 @@ class CharityModal extends React.Component {
                         <input ref={(input) => this.email = input} type="text" placeholder="Email"/>
                         <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
                         <br/><br/>
-                        <button type="submit">Log In</button>
+                        <button type="submit" className="login-submit">Log In</button>
                     </form>
                 </DialogContent>
                 </Dialog>
@@ -147,7 +147,7 @@ class CharityModal extends React.Component {
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
                     fullWidth={true}
-                    className="charity-sign-up"
+                    className="charity-signup-modal"
                 >
                     <DialogTitle style={styleTop}>Sign Up</DialogTitle>
                     <DialogContent style={styleBottom}>
@@ -162,6 +162,7 @@ class CharityModal extends React.Component {
                             />
                             <input ref={(input) => this.street = input} type="text" placeholder="Street name"/>
                             <input ref={(input) => this.city = input} type="text" placeholder="City"/>
+                            <input ref={(input) => this.state = input} type="text" placeholder="State"/>
                             <input ref={(input) => this.zipcode = input} type="text" placeholder="Zipcode"/>
                             <input 
                                 ref={(input) => this.phoneNumber = input} 
@@ -169,12 +170,10 @@ class CharityModal extends React.Component {
                                 placeholder="Phone number"
                             />
                             <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
-
                             <input ref={(input) => this.confirmPassword = input} type="text" placeholder="Confirm Password"/>
                             
-                            <br/><br/>
                             <p>By creating an account you agree to our <a href="#">Terms & Privacy</a></p>
-                            <button type="submit">Sign Up</button>
+                            <button type="submit" className="signup-submit">Sign Up</button>
                         </form>
                     </DialogContent>
                 </Dialog>
