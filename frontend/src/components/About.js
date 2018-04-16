@@ -7,6 +7,7 @@ const About = () => (
     <div className="container-a">
       <div className="first-img">
         <img
+          className="z-depth-5"
           src="https://images.unsplash.com/photo-1457601893031-bfb36abc37c4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=87313f88e5f7d0b20369772cd910ddac&auto=format&fit=crop&w=1351&q=80"
           alt="view into the distance"
         />
@@ -52,7 +53,10 @@ const About = () => (
         </p>
       </div>
       <div className="second-img">
-        <img src="https://images.unsplash.com/photo-1468421870903-4df1664ac249?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3aa575e67b51bc49d1d37949b2189938&auto=format&fit=crop&w=800&q=60" />
+        <img
+          className="z-depth-5"
+          src="https://images.unsplash.com/photo-1468421870903-4df1664ac249?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3aa575e67b51bc49d1d37949b2189938&auto=format&fit=crop&w=800&q=60"
+        />
       </div>
       <div className="fourth-text">
         <p>
