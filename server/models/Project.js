@@ -8,7 +8,6 @@ const ProjectSchema = new Schema({
   // charity: { type: Schema.Types.ObjectId, ref: "Charity" },
   // donors: [{ type: Schema.Types.ObjectId, ref: "Donor" }],
   SupplierName: {
-    // required: true,
     type: String
   },
   title: String,
@@ -21,7 +20,6 @@ const ProjectSchema = new Schema({
     type: String
   },
   Amount: {
-    // required: true,
     type: Number
   },
   PONumber: {
@@ -29,11 +27,9 @@ const ProjectSchema = new Schema({
     type: Number
   },
   image: {
-    // required: true,
     type: String
   },
   project: {
-    // required: true,
     type: String
   },
   DonorList: {
