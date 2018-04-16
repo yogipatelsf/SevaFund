@@ -4,13 +4,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ProjectSchema = new Schema({
-  _id: Schema.Types.ObjectId,
-  charity: { type: Schema.Types.ObjectId, ref: "Charity" },
-  donors: [{ type: Schema.Types.ObjectId, ref: "Donor" }],
+  // _id: Schema.Types.ObjectId,
+  // charity: { type: Schema.Types.ObjectId, ref: "Charity" },
+  // donors: [{ type: Schema.Types.ObjectId, ref: "Donor" }],
   SupplierName: {
-    required: true,
+    // required: true,
     type: String
   },
+  title: String,
   supp_eth_address:{
      required: false, //needs to be true
      type: String
@@ -20,19 +21,19 @@ const ProjectSchema = new Schema({
     type: String
   },
   Amount: {
-    required: true,
+    // required: true,
     type: Number
   },
   PONumber: {
-    required: true,
+    required: false,
     type: Number
   },
   image: {
-    required: true,
+    // required: true,
     type: String
   },
   project: {
-    required: true,
+    // required: true,
     type: String
   },
   DonorList: {
@@ -42,4 +43,4 @@ const ProjectSchema = new Schema({
 
 const Project = mongoose.model("Project", ProjectSchema);
 
-module.export = Project;
+module.exports = Project;
