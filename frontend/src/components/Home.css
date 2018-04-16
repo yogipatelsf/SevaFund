@@ -1,9 +1,17 @@
-.container {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 h1 {
     text-align: center;
+}
+
+h3, 
+p, 
+.new-user {
+    font-family: 'Raleway', sans-serif;
+
+}
+
+p, 
+.message {
+    padding: 5px;
 }
 
 .new-user {

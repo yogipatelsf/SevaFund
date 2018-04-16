@@ -91,7 +91,7 @@ class CharityModal extends React.Component {
         };
 
         const margin = {
-            margin: 20,
+            margin: 10,
         };
 
         return (
