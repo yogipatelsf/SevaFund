@@ -172,7 +172,7 @@ class CharityModal extends React.Component {
                             <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
                             <input ref={(input) => this.confirmPassword = input} type="text" placeholder="Confirm Password"/>
                             
-                            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a></p>
+                            <p>By creating an account you agree to our <a href="/about">Terms & Privacy</a></p>
                             <button type="submit" className="signup-submit">Sign Up</button>
                         </form>
                     </DialogContent>

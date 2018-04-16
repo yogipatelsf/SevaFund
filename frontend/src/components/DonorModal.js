@@ -152,7 +152,7 @@ class DonorModal extends React.Component {
                             <input ref={(input) => this.password = input} type="text" placeholder="Confirm password"/>
                             
                             <br/><br/>
-                            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a></p>
+                            <p>By creating an account you agree to our <a href="/about">Terms & Privacy</a></p>
                             <button type="submit" className="signup-submit">Sign Up</button>
                         </form>
                     </DialogContent>
