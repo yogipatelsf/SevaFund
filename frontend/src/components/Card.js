@@ -31,7 +31,7 @@ class Card extends Component {
   };
 
   render() {
-    const { title, image, content, website, amount } = this.props;
+    const { title, image, project, website, Amount } = this.props;
     const { donation, funded } = this.state;
     // const percentage = int()
 
@@ -77,16 +77,16 @@ class Card extends Component {
             {title}
             <i className="material-icons right">close</i>
           </span>
-          <p>{content}</p>
+          <p>{project}</p>
           <p>
             Target Funding:{" "}
             <NumberFormat
-              value={amount}
+              value={Amount}
               displayType="text"
               thousandSeparator={true}
               prefix={"$"}
             />{" "}
-            -- Funded: {parseInt(funded, 10) / parseInt(amount, 10) * 100}%
+            -- Funded: {parseInt(funded, 10) / parseInt(Amount, 10) * 100}%
           </p>
           <a href={website} target="_blank">
             <p>Please Visit Us!</p>
