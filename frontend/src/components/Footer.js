@@ -38,7 +38,7 @@ const Footer = () => {
               <li>
                 <a
                   className="grey-text text-lighten-3"
-                  href="https://www.twitter.com"
+                  href="https://twitter.com/sevafund"
                   target="_blank"
                 >
                   <i className="fa fa-twitter" aria-hidden="true" />
