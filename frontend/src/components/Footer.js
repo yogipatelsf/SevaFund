@@ -47,7 +47,7 @@ const Footer = () => {
               <li>
                 <a
                   className="grey-text text-lighten-3"
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/company/sevafund/"
                   target="_blank"
                 >
                   <i class="fa fa-linkedin" aria-hidden="true" />
