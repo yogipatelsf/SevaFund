@@ -29,7 +29,7 @@ const Footer = () => {
               <li>
                 <a
                   className="grey-text text-lighten-3"
-                  href="https://www.facebook.com"
+                  href="https://www.facebook.com/sevafund/"
                   target="_blank"
                 >
                   <i className="fa fa-facebook" aria-hidden="true" />
