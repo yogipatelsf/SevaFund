@@ -36,7 +36,7 @@ class Card extends Component {
     // const percentage = int()
 
     return (
-      <div className="card">
+      <div className="card z-depth-5">
         <div className="card-image waves-effect waves-block waves-light">
           <img className="activator" src={image} alt={title} />
         </div>

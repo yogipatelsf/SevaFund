@@ -1,7 +1,5 @@
 .charity-cards {
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: 450px 450px;
-  grid-template-rows: 500px 500px;
-  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr;
 }
