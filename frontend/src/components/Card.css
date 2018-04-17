@@ -1,5 +1,6 @@
 .card {
   width: 90%;
+  border-radius: 10px;
 }
 div.card {
   margin-top: 20px;

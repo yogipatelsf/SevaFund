@@ -1,0 +1,20 @@
+.page-footer {
+  margin-top: 50px;
+}
+
+.social-med li {
+  display: inline-block;
+  margin: 10px 10px 10px 10px;
+}
+
+.fa {
+  font-size: 2rem;
+}
+
+h5#contact {
+  margin-right: 250px;
+}
+
+h5#follow-us {
+  margin-right: 150px;
+}
