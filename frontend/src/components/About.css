@@ -72,8 +72,8 @@ h5 {
 }
 
 .image-border {
-  width: 70%;
-  height: 65%;
+  width: 50%;
+  height: 50%;
   border-radius: 50%;
   border: 0.5px solid black;
 }
