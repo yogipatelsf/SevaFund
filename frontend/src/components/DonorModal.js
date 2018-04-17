@@ -85,6 +85,9 @@ class DonorModal extends React.Component {
         
         const margin = {
             margin: 10,
+            borderRadius: '50px',
+            fontFamily: 'Raleway sans-serif',
+            fontSize: '.90rem'
         };
 
         return (

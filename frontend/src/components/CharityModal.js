@@ -92,6 +92,9 @@ class CharityModal extends React.Component {
 
         const margin = {
             margin: 10,
+            borderRadius: '50px',
+            fontFamily: 'Raleway sans-serif',
+            fontSize: '.90rem'
         };
 
         return (
@@ -103,10 +106,10 @@ class CharityModal extends React.Component {
                         variant="raised"
                         color="primary"
                         className="login-button light-blue accent-2"
-                        label="Log In"
+                        label="Login"
                         style={margin}
                     >
-                        Log In
+                        Login
                     </Button>
                     <Button
                         native
