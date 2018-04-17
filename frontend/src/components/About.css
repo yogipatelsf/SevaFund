@@ -67,8 +67,13 @@ h5 {
 }
 
 .title {
+  font-size: 2rem;
   padding-top: 2%;
   text-align: center;
+  font-family: "Work Sans, sans-serif";
+  color: #9E9B8D;
+  line-height: 1.125rem;
+  /* text-transform: uppercase; */
 }
 
 .image-border {
@@ -79,5 +84,7 @@ h5 {
 }
 
 p {
-  font-size: 1.19rem;
+  font-size: 1.1rem;
+  font-family: "Lato, sans-serif";
+  color: #5C5C5C;
 }

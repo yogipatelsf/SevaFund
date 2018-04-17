@@ -132,7 +132,6 @@ class CharityModal extends React.Component {
                     open={this.state.logIn}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
-                    fullWidth={true}
                     className="charity-log-in"
                 >
                 <DialogTitle style={styleTop}>Log In</DialogTitle>
@@ -151,7 +150,6 @@ class CharityModal extends React.Component {
                     open={this.state.signUp}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
-                    fullWidth={true}
                     className="charity-signup-modal"
                 >
                     <DialogTitle style={styleTop}>Sign Up</DialogTitle>

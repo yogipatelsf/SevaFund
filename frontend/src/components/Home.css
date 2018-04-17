@@ -3,21 +3,31 @@ h1 {
     color: #F8F8FF;
     /* color: white; */
     /* color: #8cff1a; */
+    color: #9E9B8D;
+    font-size: 2.75rem;
 }
 
-h3 {
-    color: #F8F8FF;
-} 
+h4 {
+    color: #9E9B8D;
+    font-size: 1.75rem;
+}
 
 h3
 p, 
 .new-user {
     font-family: 'Raleway', sans-serif;
+    color: #5C5C5C;
+
 }
 
 p, 
 .message {
     padding: 5px;
+}
+
+.sub-title {
+    color: #5C5C5C;
+    font-size: 1.5rem;
 }
 
 .new-user {

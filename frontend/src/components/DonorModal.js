@@ -123,7 +123,6 @@ class DonorModal extends React.Component {
                     open={this.state.logIn}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
-                    fullWidth={true}
                     className="donor-log-in"
                 >
                 <DialogTitle style={styleTop}>Log In</DialogTitle>
@@ -142,7 +141,6 @@ class DonorModal extends React.Component {
                     open={this.state.signUp}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
-                    fullWidth={true}
                     className="donor-sign-up"
                 >
                     <DialogTitle style={styleTop}>Sign Up</DialogTitle>

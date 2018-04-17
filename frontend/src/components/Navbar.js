@@ -25,7 +25,7 @@ class Navbar extends Component {
                 <a href="/about">Who we are</a>
               </li>
               <li>
-                <a href="/api/projects">Open PO's</a>
+                <a href="/api/projects">Projects</a>
               </li>
             </ul>
           </div>
@@ -41,7 +41,7 @@ class Navbar extends Component {
             <a href="/about">About</a>
           </li>
           <li>
-            <a href="/api/projects">Open PO's</a>
+            <a href="/api/projects">Projects</a>
           </li>
         </ul>
       </div>
