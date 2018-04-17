@@ -2,9 +2,9 @@
     display: inline-block;
 }
 
-.login-button,
-.signup-button {
-    font-family: 'Raleway', sans-serif;
+.login-button:hover,
+.signup-button:hover {
+    opacity: 0.5;
 }
 
 .login-submit {
