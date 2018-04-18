@@ -129,7 +129,7 @@ class DonorModal extends React.Component {
                 <DialogContent style={styleBottom}>
                     <form ref={(input) => this.loginForm = input} className="login-edit" onSubmit={(e) => this.logIn(e)}>
                         <input ref={(input) => this.email = input} type="text" placeholder="Email"/>
-                        <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
+                        <input ref={(input) => this.password = input} type="password" placeholder="Password"/>
                         <br/><br/>
                         <button type="submit" className="login-submit">Log In</button>
                     </form>
@@ -151,8 +151,8 @@ class DonorModal extends React.Component {
                                 ref={(input) => this.email = input} 
                                 type="text" placeholder="Email" 
                             />
-                            <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
-                            <input ref={(input) => this.password = input} type="text" placeholder="Confirm password"/>
+                            <input ref={(input) => this.password = input} type="password" placeholder="Password"/>
+                            <input ref={(input) => this.password = input} type="password" placeholder="Confirm password"/>
                             
                             <br/><br/>
                             <p>By creating an account you agree to our <a href="/about">Terms & Privacy</a></p>

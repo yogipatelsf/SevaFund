@@ -138,7 +138,7 @@ class CharityModal extends React.Component {
                 <DialogContent style={styleBottom}>
                     <form ref={(input) => this.loginForm = input} className="signUp-edit" onSubmit={(e) => this.logIn(e)}>
                         <input ref={(input) => this.email = input} type="text" placeholder="Email"/>
-                        <input ref={(input) => this.password = input} type="text" placeholder="Password"/>
+                        <input ref={(input) => this.password = input} type="password" placeholder="Password"/>
                         <br/><br/>
                         <button type="submit" className="login-submit">Log In</button>
                     </form>
