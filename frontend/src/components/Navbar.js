@@ -3,47 +3,27 @@ import SignUpModal from "./SignUpModal.js";
 import "./Navbar.css";
 
 class Navbar extends Component {
-  state = {
-    isTop: true,
-  };
 
-  componentDidMount() {
-    document.addEventListener('scroll', () => {
-      const isTop = window.scrollY < 100;
-      if (isTop !== this.state.isTop) {
-        this.setState({ isTop })
-      }
-    });
-  }
-  
+
+  // const OnScroll = (window.onScroll) => {
+  //   const nav = document.querySelector('#navRow.row');
+  //   if(this.scrollY <= 10) nav.className = '';
+  //   else nav.id = 'row'
+  // }
+
   render() {
-
-    const overStyle = {
-      color: 'black',
-      position: 'fixed',
-      zIndex: '2',
-      margin: '0'
-    };
-
-    const navColor = {
-      backgroundColor: 'white'
-    }
-
-    const colorWords = {
-      color: 'black'
-    };
-
+    
     return (
       <div>
         <nav className="transparent z-depth-0">
-          <div className="nav-wrapper" style={overStyle}>
+          <div className="nav-wrapper">
             
-            <div className="row" style={navColor}>
+            <div className="row" id="navRow">
               <a href="" data-target="mobile-demo" className="sidenav-trigger">
-                <i className="material-icons" style={colorWords}>menu</i>
+                <i className="material-icons" >menu</i>
               </a>
 
-              <a href="/" className="brand-logo" style={colorWords}>
+              <a href="/" className="brand-logo" >
                 SevaFund
               </a>
               
@@ -54,18 +34,18 @@ class Navbar extends Component {
                 >
                   New Purchase Order
                 </a>
-                <li className="nav-words">
+                <li>
                   <a 
                     href="/about"
-                    style={colorWords}
+                    className="nav-words"
                   >
                   Who we are
                   </a>
                 </li>
-                <li className="nav-words">
+                <li>
                   <a 
                     href="/api/projects"
-                    style={colorWords}
+                    className="nav-words"
                   >
                   Projects
                   </a>
@@ -78,7 +58,7 @@ class Navbar extends Component {
         <ul className="sidenav" id="mobile-demo">
           <a
             className="waves-effect waves-light btn modal-trigger"
-            style={colorWords}
+            
             href="/newPo"
           >
             New Purchase Order
@@ -86,7 +66,7 @@ class Navbar extends Component {
           <li>
             <a 
               href="/about"
-              style={colorWords}
+              
             >
               About
             </a>
@@ -94,7 +74,7 @@ class Navbar extends Component {
           <li>
             <a 
               href="/api/projects"
-              style={colorWords}
+              
             >
               Projects
             </a>

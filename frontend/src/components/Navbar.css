@@ -1,3 +1,16 @@
+a.nav-words, a.brand-logo {
+  color: black;
+}
+
+div.nav-wrapper {
+  position: fixed;
+  /* z-index: 2; */
+}
+
+#navRow.row {
+  /* background-color: white; */
+}
+
 .nav-wrapper, .sidenav {
   font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
   top: 0;
@@ -7,7 +20,6 @@
 .modal-content {
   color: black;
 }
-
 .brand-logo {
   margin-left: 5%;
 }
