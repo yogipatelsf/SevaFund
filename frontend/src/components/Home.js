@@ -8,7 +8,7 @@ const Home = () => (
     <h1>Welcome to SevaFund</h1>
 
     <div className="container new-user">
-      <h5 className="white-text">
+      <h5 className="indigo-text">
         How can we help you? Please choose from the options below
       </h5>
     </div>

@@ -1,15 +1,15 @@
 h1 {
     text-align: center;
-    color: #F8F8FF;
+    color: rgb(2, 0, 112);  
     /* color: white; */
     /* color: #8cff1a; */
 }
 
 h3 {
-    color: #F8F8FF;
+    color: rgb(2, 0, 112);
 } 
 
-h3
+h3,
 p, 
 .new-user {
     font-family: 'Raleway', sans-serif;
@@ -21,7 +21,7 @@ p,
 }
 
 .new-user {
-    color: #F8F8FF;
+    color:  rgb(2, 0, 112);
     /* color: white; */
     text-align: center;
     padding-bottom: 10px;
@@ -41,5 +41,5 @@ p,
 }
 
 .donor:hover, .charity:hover {
-    background-color: lightslategray;
+    background-color: rgb(184, 219, 253);
 }
