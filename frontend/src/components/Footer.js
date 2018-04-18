@@ -20,7 +20,7 @@ const Footer = () => {
               <li>
                 <a
                   className="grey-text text-lighten-3"
-                  href="https://www.instagram.com"
+                  href="https://www.instagram.com/sevafund"
                   target="_blank"
                 >
                   <i className="fa fa-instagram" aria-hidden="true" />

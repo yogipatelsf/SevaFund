@@ -8,7 +8,7 @@ div.nav-wrapper {
 }
 
 #navRow.row {
-  /* background-color: white; */
+  background-color: white;
 }
 
 .nav-wrapper, .sidenav {
@@ -22,6 +22,10 @@ div.nav-wrapper {
 }
 .brand-logo {
   margin-left: 5%;
+}
+
+ul.social-med {
+  z-index: 1;
 }
 
 ul.right.hide-on-med-and-down {
