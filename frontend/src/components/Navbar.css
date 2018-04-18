@@ -4,7 +4,7 @@ a.nav-words, a.brand-logo {
 
 div.nav-wrapper {
   position: fixed;
-  /* z-index: 2; */
+  z-index: 0;
 }
 
 #navRow.row {

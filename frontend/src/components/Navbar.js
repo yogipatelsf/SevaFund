@@ -4,13 +4,6 @@ import "./Navbar.css";
 
 class Navbar extends Component {
 
-
-  // const OnScroll = (window.onScroll) => {
-  //   const nav = document.querySelector('#navRow.row');
-  //   if(this.scrollY <= 10) nav.className = '';
-  //   else nav.id = 'row'
-  // }
-
   render() {
     
     return (
