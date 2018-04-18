@@ -20,20 +20,19 @@ class Card extends Component {
   };
 
   //Needs handleSubmit() method
-  handleSubmit = event => {
-    event.preventDefault();
+  // handleSubmit = event => {
+  //   event.preventDefault();
 
-    this.setState({
-      donation: 0,
-      funded:
-        parseInt(this.state.funded, 10) + parseInt(this.state.donation, 10)
-    });
-  };
+  //   this.setState({
+  //     donation: 0,
+  //     funded:
+  //       parseInt(this.state.funded, 10) + parseInt(this.state.donation, 10)
+  //   });
+  // };
 
   render() {
     const { title, image, project, website, Amount } = this.props;
     const { donation, funded } = this.state;
-    // const percentage = int()
 
     return (
       <div className="container">

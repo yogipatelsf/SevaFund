@@ -1,18 +1,20 @@
-a.nav-words, a.brand-logo {
+a.nav-words,
+a.brand-logo {
   color: black;
 }
 
 div.nav-wrapper {
   position: fixed;
-  z-index: 0;
+  /* z-index: 0; */
 }
 
-#navRow.row {
+div#navRow.row {
   /* background-color: white; */
 }
 
-.nav-wrapper, .sidenav {
-  font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+.nav-wrapper,
+.sidenav {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   top: 0;
   width: 100%;
 }
