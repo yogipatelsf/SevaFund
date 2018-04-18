@@ -50,7 +50,7 @@ const Footer = () => {
                   href="https://www.linkedin.com/company/sevafund/"
                   target="_blank"
                 >
-                  <i class="fa fa-linkedin" aria-hidden="true" />
+                  <i className="fa fa-linkedin" aria-hidden="true" />
                 </a>
               </li>
             </ul>

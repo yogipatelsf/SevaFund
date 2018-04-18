@@ -1,13 +1,14 @@
 import React, { Component } from "react";
+import API from "../utils/API";
 import "./RandForm.css";
 
 class RandForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      institution: "",
+      title: "",
       supplier: "",
-      amount: "",
+      Amount: "",
       poNum: "",
       email: "",
       image: "",
@@ -15,35 +16,62 @@ class RandForm extends Component {
     };
   }
 
+  // componentDidMount() {
+  //   this.createProject();
+  // }
+
+  // createProject = () => {
+  //   API.saveProject().then(res => {
+  //     console.log(res);
+  //     console.log(this.state);
+  //   });
+  // };
+
   handleInputChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
+    console.log("form submitted!!");
+    API.saveProject({
+      title: this.state.title,
+      supplier: this.state.supplier,
+      Amount: this.state.Amount,
+      poNum: this.state.poNum,
+      email: this.state.email,
+      image: this.state.image,
+      project: this.state.project
+    })
+      .then(() => {
+        console.log(this.state);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
     this.setState({
-      institution: "",
+      title: "",
       supplier: "",
-      amount: "",
+      Amount: "",
       poNum: "",
       email: "",
       image: "",
       project: ""
     });
-
-    console.log(this.state);
   };
 
   render() {
     const {
-      institution,
+      title,
       supplier,
-      amount,
+      Amount,
       poNum,
       email,
       image,
       project
     } = this.state;
+
     return (
       <div className="container">
         <form id="newPo" onSubmit={this.handleFormSubmit} className="z-depth-5">
@@ -56,11 +84,11 @@ class RandForm extends Component {
             <div className="col s6 input-field">
               <label htmlFor="institution">Institution's Name</label>
               <input
-                id="institution"
+                id="title"
                 type="text"
                 placeholder="Institution Name"
-                name="institution"
-                value={institution}
+                name="title"
+                value={title}
                 onChange={this.handleInputChange}
               />
             </div>
@@ -78,13 +106,13 @@ class RandForm extends Component {
           </div>
           <div className="row">
             <div className="col s6 input-field">
-              <label htmlFor="amount">Amount ($)</label>
+              <label htmlFor="Amount">Amount ($)</label>
               <input
-                id="amout"
+                id="Amout"
                 type="number"
                 placeholder="$00,000.00"
-                name="amount"
-                value={amount}
+                name="Amount"
+                value={Amount}
                 onChange={this.handleInputChange}
               />
             </div>
