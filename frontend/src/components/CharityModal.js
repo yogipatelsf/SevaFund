@@ -92,6 +92,11 @@ class CharityModal extends React.Component {
 
         const margin = {
             margin: 10,
+            borderRadius: '50px',
+            fontFamily: 'sans-serif',
+            fontSize: '.75rem',
+            backgroundColor: '#9E9B8D',
+            letterSpacing: '0.09375rem',
         };
 
         return (
@@ -100,20 +105,20 @@ class CharityModal extends React.Component {
                     <Button
                         native
                         onClick={this.handleLogInOpen}
+                        className="login-button"
                         variant="raised"
                         color="primary"
-                        className="login-button light-blue accent-2"
-                        label="Log In"
+                        label="Login"
                         style={margin}
                     >
-                        Log In
+                        Login
                     </Button>
                     <Button
                         native
                         onClick={this.handleSignUpOpen}
+                        className="signup-button"
                         variant="raised"
                         color="default"
-                        className="signup-button light-blue accent-2"
                         label="Sign Up"
                         style={margin}
                     >
@@ -127,7 +132,6 @@ class CharityModal extends React.Component {
                     open={this.state.logIn}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
-                    fullWidth={true}
                     className="charity-log-in"
                 >
                 <DialogTitle style={styleTop}>Log In</DialogTitle>
@@ -146,7 +150,6 @@ class CharityModal extends React.Component {
                     open={this.state.signUp}
                     onClose={this.handleClose}
                     aria-labelledby="form-dialog-title"
-                    fullWidth={true}
                     className="charity-signup-modal"
                 >
                     <DialogTitle style={styleTop}>Sign Up</DialogTitle>

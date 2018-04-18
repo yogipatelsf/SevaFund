@@ -91,42 +91,42 @@ const About = () => (
           className="image-border z-depth-5"
           src="https://media.licdn.com/dms/image/C4E03AQFdOyiFCPGKwQ/profile-displayphoto-shrink_800_800/0?e=1529006400&v=beta&t=ZhiKlTTDOLduAfk_2fmFDVNmBAMv07lVP_tz5LeTSOs"
         />
-        <h5>Sofiane Guerfi</h5>
+        <p>Sofiane Guerfi</p>
       </div>
       <div className="pic2">
         <img
           className="image-border z-depth-5"
           src="https://pbs.twimg.com/profile_images/924868643707432961/o_7HHI7G_400x400.jpg"
         />
-        <h5>Gerardo Fernandez</h5>
+        <p>Gerardo Fernandez</p>
       </div>
       <div className="pic3">
         <img
           className="image-border z-depth-5"
           src="https://media.licdn.com/dms/image/C4E03AQH1mGQPM0xxug/profile-displayphoto-shrink_800_800/0?e=1529006400&v=beta&t=XEoPekiQ6dwEdZInAEaAiJ8u1JCP_J4kIw0EUWYkKAw"
         />
-        <h5>Yogi Patel</h5>
+        <p>Yogi Patel</p>
       </div>
       <div className="pic4">
         <img
           className="image-border z-depth-5"
           src="https://media.licdn.com/dms/image/C5103AQEuTm2vBPU4Dw/profile-displayphoto-shrink_800_800/0?e=1529006400&v=beta&t=-x49hMLKvZbPLOeZ6GIgpuCL8Zbw9XalGRwpU-Of4Bk"
         />
-        <h5>Sandon Du</h5>
+        <p>Sandon Du</p>
       </div>
       <div className="pic5">
         <img
           className="image-border z-depth-5"
           src="https://media.licdn.com/dms/image/C5103AQEoDyxUuDELjw/profile-displayphoto-shrink_800_800/0?e=1529006400&v=beta&t=HmX3tMiZFtoiZzysxYSggp9FgVlPOluZAauio61pA9c"
         />
-        <h5>Sushant Srikrish</h5>
+        <p>Sushant Srikrish</p>
       </div>
       <div className="pic6">
         <img
           className="image-border z-depth-5"
           src="https://media.licdn.com/dms/image/C5103AQGu1IZSZf0UxQ/profile-displayphoto-shrink_800_800/0?e=1529024400&v=beta&t=-LzmurIhAI9-8NTW5ce0vYqYnSjKV-qKvA5EyYRE4bU"
         />
-        <h5>Bahadur Ghataorhe</h5>
+        <p>Bahadur Ghataorhe</p>
       </div>
     </div>
   </div>
