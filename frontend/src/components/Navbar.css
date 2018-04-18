@@ -1,19 +1,9 @@
-.nav-wrapper, .sidenav {
-  font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-  top: 0;
-  width: 100%;
-}
-
 .modal-content {
   color: black;
 }
 
 .brand-logo {
   margin-left: 5%;
-}
-
-ul.right.hide-on-med-and-down {
-  color: black;
 }
 
 button.MuiButtonBase-root-16.MuiButton-root-1 {
