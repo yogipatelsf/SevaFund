@@ -8,8 +8,8 @@ div.nav-wrapper {
   /* z-index: 0; */
 }
 
-div#navRow.row {
-  /* background-color: white; */
+#navRow.row {
+  background-color: white;
 }
 
 .nav-wrapper,
@@ -24,6 +24,10 @@ div#navRow.row {
 }
 .brand-logo {
   margin-left: 5%;
+}
+
+ul.social-med {
+  z-index: 1;
 }
 
 ul.right.hide-on-med-and-down {
