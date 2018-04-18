@@ -3,12 +3,26 @@ import SignUpModal from "./SignUpModal.js";
 import "./Navbar.css";
 
 class Navbar extends Component {
+  state = {
+    isTop: true,
+  };
+
+  componentDidMount() {
+    document.addEventListener('scroll', () => {
+      const isTop = window.scrollY < 100;
+      if (isTop !== this.state.isTop) {
+        this.setState({ isTop })
+      }
+    });
+  }
+  
   render() {
 
     const overStyle = {
       color: 'black',
       position: 'fixed',
-      zIndex: '2'
+      zIndex: '2',
+      margin: '0'
     };
 
     const navColor = {
