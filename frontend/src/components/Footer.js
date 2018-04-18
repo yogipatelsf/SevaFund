@@ -29,7 +29,7 @@ const Footer = () => {
               <li>
                 <a
                   className="grey-text text-lighten-3"
-                  href="https://www.facebook.com"
+                  href="https://www.facebook.com/sevafund/"
                   target="_blank"
                 >
                   <i className="fa fa-facebook" aria-hidden="true" />
@@ -38,7 +38,7 @@ const Footer = () => {
               <li>
                 <a
                   className="grey-text text-lighten-3"
-                  href="https://www.twitter.com"
+                  href="https://twitter.com/sevafund"
                   target="_blank"
                 >
                   <i className="fa fa-twitter" aria-hidden="true" />
@@ -47,10 +47,10 @@ const Footer = () => {
               <li>
                 <a
                   className="grey-text text-lighten-3"
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/company/sevafund/"
                   target="_blank"
                 >
-                  <i class="fa fa-linkedin" aria-hidden="true" />
+                  <i className="fa fa-linkedin" aria-hidden="true" />
                 </a>
               </li>
             </ul>
