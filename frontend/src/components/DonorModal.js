@@ -6,6 +6,7 @@ import Dialog, {
 } from 'material-ui/Dialog';
 // import Select from 'material-ui/Select';
 import './DonorModal.css';
+import API from '../utils/API'
 
 class DonorModal extends React.Component {
     state = {
@@ -58,12 +59,16 @@ class DonorModal extends React.Component {
     createSignUp(event){
         event.preventDefault();
         console.log("This is a donor signing up");
-        const signUp = {
+         let signUpData = {
             email: this.email.value,
             password: this.password.value,
             confirmPassword: this.password.value,
         }
-        console.log(signUp);
+        API.registerDonor(signUpData)
+            .then(res => console.log("donor registred successfully"))
+            .catch(err => console.log(err));
+
+        console.log(signUpData);
         this.signUpForm.reset();
     }
     
