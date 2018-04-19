@@ -33,9 +33,9 @@ const passportApi = app => {
 //************************************* * Donor Auth * ******************************************
        
 
-        app.post('/donor/login', (req,res) => {
-                res.send('donor login route hit');
-            })
+        // app.post('/donor/login', (req,res) => {
+        //         res.send('donor login route hit');
+        //     })
                 // passport.authenticate('donor', {
                 //             successRedirect:'/', 
                 //             failureRedirect:'/',
@@ -48,9 +48,9 @@ const passportApi = app => {
 ////************************************* * Charity Auth * *************************************
 
     
-        app.post('/charity/login',  (req,res) => {
-                res.send("charity login route hit");
-                })
+        // app.post('/charity/login',  (req,res) => {
+        //         res.send("charity login route hit");
+        //         })
                 // passport.authenticate('charity', {
             
                 //             successRedirect:'/newPo', 

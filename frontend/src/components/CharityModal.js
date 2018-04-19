@@ -75,7 +75,7 @@ class CharityModal extends React.Component {
             state: this.state.value,
         }
         API.registerCharity(signUp)
-            .then(res => console.log("charity registred successfully"))
+            .then(res => console.log(res))
             .catch(err => console.log(err));
         console.log(signUp);
         this.signUpForm.reset();

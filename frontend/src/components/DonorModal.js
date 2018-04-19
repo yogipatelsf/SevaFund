@@ -53,7 +53,7 @@ class DonorModal extends React.Component {
             Password: this.password.value,
         }
         API.donorAuth(login)
-            .then(res => console.log("donor signed in successfully"))
+            .then(res => console.log(res))
             .catch(err => console.log(err));
         console.log(login);
         this.loginForm.reset();
