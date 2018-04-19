@@ -7,6 +7,7 @@ import Dialog, {
 // import Select from 'material-ui/Select';
 // import MenuItem from 'material-ui/MenuItem';
 import './CharityModal.css'
+import API from '../utils/API'
 
 class CharityModal extends React.Component {
     state = {
@@ -64,12 +65,15 @@ class CharityModal extends React.Component {
             email: this.email.value,
             street: this.street.value,
             city: this.city.value,
-            state: this.state.value,
             zipcode: this.zipcode.value,
             phoneNumber: this.phoneNumber.value,
             password: this.password.value,
             confirmPassword: this.password.value,
+            state: this.state.value,
         }
+        API.registerCharity(signUp)
+            .then(res => console.log("charity registred successfully"))
+            .catch(err => console.log(err));
         console.log(signUp);
         this.signUpForm.reset();
     };

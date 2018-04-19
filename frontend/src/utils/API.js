@@ -12,5 +12,18 @@ export default {
   // Saves a project to the database
   saveProject: function(projectData) {
     return axios.post("/api/projects", projectData);
-  }
+  },
+  //User: donor/charity API
+  registerDonor: function(formData) {
+    return axios.post("/donor/register", formData);
+  },
+  registerCharity: function(formData) {
+    return axios.post("/charity/register", formData);
+  },
+  donorAuth: function(credentials) {
+    return axios.get("/donor/login", credentials);
+  },
+  charityAuth: function(credentials) {
+    return axios.get("/charity/login", credentials);
+  },
 }
