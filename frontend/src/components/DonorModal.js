@@ -87,8 +87,8 @@ class DonorModal extends React.Component {
             margin: 10,
             borderRadius: '50px',
             letterSpacing: '0.09375rem',
-            backgroundColor: 'white',
-            color: 'black',
+            backgroundColor: '#9E9B8D',
+            color: '#FFFFFF',
         };
 
         return (

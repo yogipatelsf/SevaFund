@@ -7,7 +7,7 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className="transparent z-depth-1">
+        <nav className="transparent z-depth-0">
           <div className="row" id="navRow">
             <a href="" data-target="mobile-demo" className="sidenav-trigger">
               <i className="material-icons">menu</i>
