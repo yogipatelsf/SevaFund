@@ -50,6 +50,7 @@ class DonorModal extends React.Component {
         const login = {
             email: this.email.value,
             password: this.password.value,
+            user: "donor"
         }
         console.log(login);
         this.loginForm.reset();

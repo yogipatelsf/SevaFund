@@ -51,6 +51,7 @@ class CharityModal extends React.Component {
         const login = {
             email: this.email.value,
             password: this.password.value,
+            user: "charity"
         }
         console.log(login);
         this.loginForm.reset();
