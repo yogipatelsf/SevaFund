@@ -92,6 +92,10 @@ class CharityModal extends React.Component {
 
         const margin = {
             margin: 10,
+            borderRadius: '50px',
+            letterSpacing: '0.09375rem',
+            backgroundColor: '#9E9B8D',
+            color: '#FFFFFF',
         };
 
         return (
@@ -102,18 +106,18 @@ class CharityModal extends React.Component {
                         onClick={this.handleLogInOpen}
                         variant="raised"
                         color="primary"
-                        className="login-button light-blue accent-2"
+                        className="login-button"
                         label="Log In"
                         style={margin}
                     >
-                        Log In
+                        Login
                     </Button>
                     <Button
                         native
                         onClick={this.handleSignUpOpen}
                         variant="raised"
                         color="default"
-                        className="signup-button light-blue accent-2"
+                        className="signup-button"
                         label="Sign Up"
                         style={margin}
                     >

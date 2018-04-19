@@ -3,20 +3,17 @@ a.brand-logo {
   color: black;
 }
 
-div.nav-wrapper {
-  position: fixed;
-  /* z-index: 0; */
-}
-
-#navRow.row {
+#navRow.row, .sidenav {
   background-color: white;
-}
-
-.nav-wrapper,
-.sidenav {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   top: 0;
   width: 100%;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  position: fixed;
+  z-index: 1;
+}
+
+div.card-image.waves-effect.waves-block.waves-light, div.card {
+  z-index: 0;
 }
 
 .modal-content {

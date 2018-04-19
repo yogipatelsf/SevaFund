@@ -3,11 +3,11 @@ import SignUpModal from "./SignUpModal.js";
 import "./Navbar.css";
 
 class Navbar extends Component {
+  
   render() {
     return (
       <div>
-        <nav className="transparent z-depth-0">
-          {/*<div className="nav-wrapper">*/}
+        <nav className="transparent z-depth-1">
           <div className="row" id="navRow">
             <a href="" data-target="mobile-demo" className="sidenav-trigger">
               <i className="material-icons">menu</i>
@@ -36,7 +36,6 @@ class Navbar extends Component {
               </li>
             </ul>
           </div>
-          {/*</div>*/}
         </nav>
         <ul className="sidenav" id="mobile-demo">
           <a

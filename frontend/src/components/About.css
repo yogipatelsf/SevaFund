@@ -69,14 +69,17 @@ h5 {
 .title {
   padding-top: 2%;
   text-align: center;
+  font-family: "Work Sans, sans-serif";
+  font-size: 1.526rem;
 }
 
 .image-border {
-  width: 70%;
-  height: 65%;
-  border-radius: 50%;
+  width: 50%;
+  height: 50%;
+  border-radius: 75%;
 }
 
 p {
-  font-size: 1.19rem;
+  font-size: 1.20rem;
+  font-family: "Lato, sans-serif";
 }

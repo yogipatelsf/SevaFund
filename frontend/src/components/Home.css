@@ -1,13 +1,20 @@
 h1 {
     text-align: center;
-    color: #F8F8FF;
+    color: #9E9B8D;
     /* color: white; */
     /* color: #8cff1a; */
+    font-size: 2.75rem;
+    font-family: "Lato, sans-serif";
 }
 
 h3 {
     color: #F8F8FF;
 } 
+
+h4 {
+    color: #9E9B8D;
+
+}
 
 h3
 p, 
@@ -15,14 +22,18 @@ p,
     font-family: 'Raleway', sans-serif;
 }
 
-p, 
-.message {
+h5, p.donor-message, p.charity-message {
+    font-family: "Helvetica Neue, Helvetica, Roboto, Arial, sans-serif";
+    color: #5C5C5C;
+}
+
+p {
     padding: 5px;
+    color:black;
 }
 
 .new-user {
     color: #F8F8FF;
-    /* color: white; */
     text-align: center;
     padding-bottom: 10px;
     margin-bottom: 20px;
@@ -40,6 +51,3 @@ p,
     text-align: center;
 }
 
-.donor:hover, .charity:hover {
-    background-color: lightslategray;
-}

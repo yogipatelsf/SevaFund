@@ -85,6 +85,10 @@ class DonorModal extends React.Component {
         
         const margin = {
             margin: 10,
+            borderRadius: '50px',
+            letterSpacing: '0.09375rem',
+            backgroundColor: 'white',
+            color: 'black',
         };
 
         return (
@@ -95,7 +99,7 @@ class DonorModal extends React.Component {
                         onClick={this.handleLogInOpen}
                         variant="raised"
                         color="primary"
-                        className="login-button light-blue accent-2"
+                        className="login-button"
                         style={margin}
                     >
                         Log In
@@ -106,7 +110,7 @@ class DonorModal extends React.Component {
                         onClick={this.handleSignUpOpen}
                         variant="raised"
                         color="default"
-                        className="signup-button light-blue accent-2"
+                        className="signup-button"
                         style={margin}
                     >
                         Sign Up

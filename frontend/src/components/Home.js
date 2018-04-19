@@ -8,7 +8,7 @@ const Home = () => (
     <h1>Welcome to SevaFund</h1>
 
     <div className="container new-user">
-      <h5 className="white-text">
+      <h5>
         How can we help you? Please choose from the options below
       </h5>
     </div>
@@ -18,7 +18,7 @@ const Home = () => (
         <div className="message">
           <h4>Donor</h4>
           <DonorModal />
-          <p>
+          <p className="donor-message">
             Donate to the charities and projects of your choice and witness the
             difference you can make in an easy, open, and transparent way. Sign
             up here!
@@ -31,7 +31,7 @@ const Home = () => (
         <div className="message">
           <h4>Charity</h4>
           <CharityModal />
-          <p>
+          <p className="charity-message">
             Would you like your company to join the esteemed list of nonprofits
             that are experiencing the untapped well of investors and donors who
             want to see a new age of transparency? Sign up here!
