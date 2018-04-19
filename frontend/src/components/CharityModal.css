@@ -2,9 +2,14 @@
     display: inline-block
 }
 
-.login-button,
+.login-button
 .signup-button {
     font-family: 'Raleway', sans-serif;
+}
+
+.login-button:hover,
+.signup-button:hover {
+    opacity: 0.5;
 }
 
 .login-submit {
@@ -25,4 +30,5 @@
     border: none;
     width: 100%;
     opacity: 0.9;
+
 }

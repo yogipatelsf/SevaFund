@@ -19,24 +19,13 @@ class Card extends Component {
     this.setState({ donation: value });
   };
 
-  //Needs handleSubmit() method
-  // handleSubmit = event => {
-  //   event.preventDefault();
-
-  //   this.setState({
-  //     donation: 0,
-  //     funded:
-  //       parseInt(this.state.funded, 10) + parseInt(this.state.donation, 10)
-  //   });
-  // };
-
   render() {
     const { title, image, project, website, Amount } = this.props;
     const { donation, funded } = this.state;
 
     return (
       <div className="container">
-        <div className="card z-depth-5">
+        <div className="card">
           <div className="card-image waves-effect waves-block waves-light">
             <img className="activator" src={image} alt={title} />
           </div>
