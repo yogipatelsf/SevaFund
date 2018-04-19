@@ -12,7 +12,7 @@ module.exports =  new LocalStrategy({
     session: true, 
     passReqToCallback: true 
 }, (req, email, password, done) => {
-
+    console.log("charitystrategy engaged")
     const charityData = {
         email: email.trim(),
         password: password.trim()

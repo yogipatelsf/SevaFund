@@ -33,29 +33,34 @@ const passportApi = app => {
 //************************************* * Donor Auth * ******************************************
        
 
-        app.post('/donor/login',    
-                passport.authenticate('donor', {
-                            successRedirect:'/', 
-                            failureRedirect:'/',
-                            failureFlash: true
-                        }), 
-                        (req, res) => {
-                                res.redirect('/');
-                    });
+        app.post('/donor/login', (req,res) => {
+                res.send('donor login route hit');
+            })
+                // passport.authenticate('donor', {
+                //             successRedirect:'/', 
+                //             failureRedirect:'/',
+                //             failureFlash: true
+                //         }), 
+                //         (req, res) => {
+                //                 console.log("test")
+                //                 // res.redirect('/');
+                //     });
 ////************************************* * Charity Auth * *************************************
 
     
-        app.get('/charity/login', 
-                passport.authenticate('charity', {
+        app.post('/charity/login',  (req,res) => {
+                res.send("charity login route hit");
+                })
+                // passport.authenticate('charity', {
             
-                            successRedirect:'/newPo', 
-                            failureRedirect:'/loginerror',
-                            failureFlash: true
-            
-                        }), 
-                        (req, res) => {
-                                res.redirect('/newPo');
-                    });
+                //             successRedirect:'/newPo', 
+                //             failureRedirect:'/loginerror',
+                //             failureFlash: true
+                //         }), 
+                //         (req, res) => {
+                //                 console.log("test")
+                //                 // res.redirect('/newPo');
+                //     });
 //******************************************* * serialization * *******************************************
         passport.serializeUser((user, done) => {
             let key = {

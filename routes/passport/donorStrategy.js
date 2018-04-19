@@ -11,6 +11,7 @@ module.exports =  new LocalStrategy({
     session: true, 
     passReqToCallback: true 
 }, (req, email, password, done) => {
+    console.log("donorstrategy engaged")
     const donorData = {
         email: email.trim(),
         password: password.trim()

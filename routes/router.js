@@ -51,6 +51,13 @@ const dbApi = app => {
 		.catch(err => res.status(422).json(err));
 	})
 
+  	// app.post('/donor/login', (req,res) => {
+   //  	res.send('donor login route hit');
+   //  })
+   //  app.post('/charity/login',  (req,res) => {
+   //      res.send("charity login route hit");
+   //  })
+
 //***************************************Registration/SignUp******************************************************
 	app.post('/donor/register', (req, res) => {
 		let Email = req.body.email;
