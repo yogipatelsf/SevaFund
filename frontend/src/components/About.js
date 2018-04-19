@@ -120,10 +120,12 @@ const About = () => (
         <p>Yogi Patel</p>
       </div>
       <div className="pic4">
-        <img
-          className="image-border z-depth-5"
-          src="https://media.licdn.com/dms/image/C5103AQEuTm2vBPU4Dw/profile-displayphoto-shrink_800_800/0?e=1529006400&v=beta&t=-x49hMLKvZbPLOeZ6GIgpuCL8Zbw9XalGRwpU-Of4Bk"
-        />
+        <a href="https://www.linkedin.com/in/sandon-du-eit/" target="_blank">
+          <img
+            className="image-border z-depth-5"
+            src="https://media.licdn.com/dms/image/C5103AQEuTm2vBPU4Dw/profile-displayphoto-shrink_800_800/0?e=1529006400&v=beta&t=-x49hMLKvZbPLOeZ6GIgpuCL8Zbw9XalGRwpU-Of4Bk"
+          />
+        </a>
         <p>Sandon Du</p>
       </div>
       <div className="pic5">
