@@ -49,9 +49,12 @@ class CharityModal extends React.Component {
         event.preventDefault();
         console.log("This is a charity logging in");
         const login = {
-            email: this.email.value,
-            password: this.password.value,
+            Email: this.email.value,
+            Password: this.password.value,
         }
+        API.charityAuth(login)
+            .then(res => console.log("charity signed in successfully"))
+            .catch(err => console.log(err));
         console.log(login);
         this.loginForm.reset();
     };

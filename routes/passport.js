@@ -5,60 +5,89 @@ const  db = require('../models');
 
 
 const passportApi = app => {
+//******************************* * Middleware for private routes * ******************************/
+    function ensureAuthenticated(req, res, next){
+        if(req.isAuthenticated()){
+            return next();
+        } else {
+            //req.flash('error_msg','You are not logged in');
+            res.redirect('/users/login');
+        }
+    }
 
+    app.get('/loginerror', function(req,res) {
+        console.log(req.flash('error'));
+        res.redirect('/');
+    })
+
+    app.get('/flash', function(req, res){
+        // Set a flash message by passing the key, followed by the value, to req.flash(). 
+        req.flash('info', 'Flash is back!')
+        console.log('back ', req.flash('info'));
         
-        
-//*************************************//setting up the passport strategy//********************************************
-        passport.use(new LocalStrategy(
-            (username, password, done) => {
-            //need to implement our schema
-                User.getUserByUsername(username, (err, user) => {
-                        if(err) throw err;
-                        if(!user){
-                            return done(null, false, {message: 'Unknown User'});
-                        }
-            //need to implement our schema
-                User.comparePassword(password, user.password, (err, isMatch) => {
-                        if(err) throw err;
-                        if(isMatch){
-                            return done(null, user);
-                        } else {
-                            return done(null, false, {message: 'Invalid password'});
-                        }
+        res.redirect('/');
+      });
+       
+      
+
+//************************************* * Donor Auth * ******************************************
+       
+
+        app.post('/donor/login',    
+                passport.authenticate('donor', {
+                            successRedirect:'/', 
+                            failureRedirect:'/',
+                            failureFlash: true
+                        }), 
+                        (req, res) => {
+                                res.redirect('/');
                     });
-                });
-        }));
+////************************************* * Charity Auth * *************************************
 
+    
+        app.get('/charity/login', 
+                passport.authenticate('charity', {
+            
+                            successRedirect:'/newPo', 
+                            failureRedirect:'/loginerror',
+                            failureFlash: true
+            
+                        }), 
+                        (req, res) => {
+                                res.redirect('/newPo');
+                    });
+//******************************************* * serialization * *******************************************
         passport.serializeUser((user, done) => {
-             done(null, user.id);
+            let key = {
+                id: user._id,
+                type: user.Type
+            }
+             done(null, key);
         });
 
-        passport.deserializeUser((id, done) => {
+        passport.deserializeUser((key, done) => {
         //need to implement our schema
-            User.getUserById(id, (err, user) => {
-                done(err, user);
-            });
+            if(key.type === 'Donor'){
+                db.Donor.getDonorById(key.id, (err, user) => {
+                    done(err, user);
+                });
+            }else if (key.type === 'Charity') {
+                db.Charity.getCharityById(key.id, (err, user) => {
+                    done(err, user);
+                });
+            }
+            
         });
-//*************************************--login/logout routes--********************************************
-        app.post('/login',        
-            passport.authenticate('local', {
-
-                successRedirect:'/', 
-                failureRedirect:'/users/login',
-                failureFlash: true
-
-            }), 
-            (req, res) => {
-                    res.redirect('/');
-        });
-
+//*************************************logout********************************************
+       
         app.get('/logout', (req, res) => {
             req.logout();
 
             req.flash('success_msg', 'You are logged out');
 
-            res.redirect('/users/login');
+            res.redirect('/');
         });
+
 //******************************************************************************************************
 
         return app

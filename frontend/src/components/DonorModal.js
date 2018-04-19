@@ -8,6 +8,7 @@ import Dialog, {
 import './DonorModal.css';
 import API from '../utils/API'
 
+
 class DonorModal extends React.Component {
     state = {
         open: false,
@@ -48,9 +49,12 @@ class DonorModal extends React.Component {
         event.preventDefault();
         console.log("This is a donor logging in");
         const login = {
-            email: this.email.value,
-            password: this.password.value,
+            Email: this.email.value,
+            Password: this.password.value,
         }
+        API.donorAuth(login)
+            .then(res => console.log("donor signed in successfully"))
+            .catch(err => console.log(err));
         console.log(login);
         this.loginForm.reset();
     }
@@ -65,7 +69,10 @@ class DonorModal extends React.Component {
             confirmPassword: this.password.value,
         }
         API.registerDonor(signUpData)
-            .then(res => console.log("donor registred successfully"))
+            .then((req, res) =>{
+                 console.log("donor registred successfully")
+                console.log('front ', req.flash);
+                })
             .catch(err => console.log(err));
 
         console.log(signUpData);

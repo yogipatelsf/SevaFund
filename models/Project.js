@@ -10,12 +10,16 @@ const ProjectSchema = new Schema({
   SupplierName: {
     type: String
   },
-  title: String,
-  supp_eth_address:{
+  Email: {
+    type: String,
+    // unique: true
+  },  
+  Title: String,
+  Supp_eth_address:{
      required: false, //needs to be true
      type: String
   },
-  contract_address:{
+  Contract_address:{
     required: false, //needs to be true
     type: String
   },
@@ -26,10 +30,13 @@ const ProjectSchema = new Schema({
     required: false,
     type: Number
   },
-  image: {
+  Image: {
     type: String
   },
-  project: {
+  Website: {
+    type: String
+  },
+  Project: {
     type: String
   },
   DonorList: {

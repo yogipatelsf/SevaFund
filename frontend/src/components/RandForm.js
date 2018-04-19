@@ -35,13 +35,13 @@ class RandForm extends Component {
     event.preventDefault();
     console.log("form submitted!!");
     API.saveProject({
-      title: this.state.title,
-      supplier: this.state.supplier,
+      Title: this.state.title,
+      SupplierName: this.state.supplier,
       Amount: this.state.Amount,
-      poNum: this.state.poNum,
-      email: this.state.email,
-      image: this.state.image,
-      project: this.state.project
+      PONumber: this.state.poNum,
+      Email: this.state.email,
+      Image: this.state.image,
+      Project: this.state.project
     })
       .then(() => {
         console.log(this.state);

@@ -13,6 +13,10 @@ const CharitySchema = new Schema({
   CharityName: {
     type: String,
   },
+  Type: {
+    type: String,
+    default: 'Charity',
+  },
   PurchaseOrder: {
     type: Array,
     default: []
@@ -52,9 +56,16 @@ module.exports.createCharity = function(newCharity, callback){
 	    });
 	});
 }
+module.exports.comparePassword = function(candidatePassword, hash, callback){
+	bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
+    	if(err) throw err;
+    	callback(null, isMatch);
+  });
+}
 
-module.exports.getCharityByCharityName = function(charityName, callback){
-	var query = {charityName: charityName};
+
+module.exports.getCharityByEmail = function(Email, callback){
+	var query = {Email: Email};
 	Charity.findOne(query, callback);
 }
 
@@ -62,9 +73,3 @@ module.exports.getCharityById = function(id, callback){
 	Charity.findById(id, callback);
 }
 
-module.exports.comparePassword = function(candidatePassword, hash, callback){
-	bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
-    	if(err) throw err;
-    	callback(null, isMatch);
-  });
-}

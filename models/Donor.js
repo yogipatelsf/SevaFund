@@ -10,6 +10,10 @@ const DonorSchema = new Schema({
   Email: {
     type: String,
   },
+  Type: {
+    type: String,
+    default: 'Donor',
+  },
   PurchaseOrders: {
     type: Array,
     default: []
@@ -42,8 +46,8 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
   });
 }
 
-module.exports.getDonorByUsername = function(username, callback){
-	var query = {username: username};
+module.exports.getDonorByEmail = function(Email, callback){
+	var query = {Email: Email};
 	Donor.findOne(query, callback);
 }
 

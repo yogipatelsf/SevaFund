@@ -19,6 +19,8 @@ const configureServer = require('./cors');
 const configureRoutes = require('./routes');
 const SERVER_CONFIGS = require('./constants/server');
 const db = require('./models');
+const charityStrategy = require('./routes/passport/charityStrategy');
+const donorStrategy = require('./routes/passport/donorStrategy');
 
 
 //********************************************* * APP * ************************************************************************
@@ -29,7 +31,8 @@ app.use(helmet()); // Helmet helps you secure your Express apps by setting vario
 app.use(compression());
 app.use(logger('tiny'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // serve static files, this is for frontend React
 app.use('/static', express.static(path.join(__dirname, 'public', 'static')));
@@ -44,11 +47,6 @@ mongoose.connect(MONGODB_URI, () =>{
 });
 //************************************************************************************************************************
 
-app.use(session({
-  secret: 'secret',
-  saveUninitialized: true,
-  resave: true
-}));
 
 // Express Validator
 app.use(expressValidator({
@@ -68,8 +66,18 @@ app.use(expressValidator({
   }
 }));
 
-app.use(flash());
+// // load passport strategies -- changes to do
+// const localSignupStrategy = require('./server/passport/local-signup');
+
+// passport.use('local-signup', localSignupStrategy);
+// 
+
+
+
+
 app.use(cookieParser());
+app.use(session({secret: 'keyboard cat', saveUninitialized: true, resave: true}));
+app.use(flash());
 
 
 ////******************************************** * Middleware * ********************************************
@@ -94,17 +102,20 @@ app.use(function (req, res, next) {
 
 app.use(passport.initialize());
 app.use(passport.session());
+passport.use('donor', donorStrategy);
+passport.use('charity', charityStrategy);
+
 
 //******************************************** *  End of Middleware  * ********************************************
 
 
 //********************************** * Default dbseeds for testing * ****************************************** */
     db.Project.create({
-            title: "Covenant Food Pantry",
-            image: "https://farm6.staticflickr.com/5554/15071821931_9106dfb10b.jpg",
-            project:
+            Title: "Covenant Food Pantry",
+            Image: "https://farm6.staticflickr.com/5554/15071821931_9106dfb10b.jpg",
+            Project:
               "With God’s grace, we seek to share Christ through a welcoming and nurturing community of faith, doing God’s work in the world.",
-            website: "http://www.covenantpcsf.org/Ministries/food_pantry.php",
+            Website: "http://www.covenantpcsf.org/Ministries/food_pantry.php",
             Amount: 12500
           })
       .then(results => {
@@ -112,11 +123,11 @@ app.use(passport.session());
       })
 
     db.Project.create({
-            title: "Project Open Hand",
-            image: "https://farm3.staticflickr.com/2391/2535419178_17da93473f.jpg",
-            project:
+            Title: "Project Open Hand",
+            Image: "https://farm3.staticflickr.com/2391/2535419178_17da93473f.jpg",
+            Project:
               "Project Open Hand’s mission is to nourish and engage our community by providing meals with love to the sick and the elderly. Watch our video celebrating Project Open Hand clients Orazgul and Mario and driver, 'Jedi.'",
-            website: "https://www.openhand.org/",
+            Website: "https://www.openhand.org/",
             Amount: 9000
           })
       .then(results => {
@@ -124,11 +135,11 @@ app.use(passport.session());
       })
 
     db.Project.create({
-            title: "SF Marine Food Bank",
-            image: "https://farm3.staticflickr.com/2789/4115935787_9065bde73d.jpg",
-            project:
+            Title: "SF Marine Food Bank",
+            Image: "https://farm3.staticflickr.com/2789/4115935787_9065bde73d.jpg",
+            Project:
               "Our mission is to end hunger in San Francisco and Marin. We envision a community where everyone is able to obtain enough nutritious food to support the health and well-being of themselves and their families.",
-            website: "https://www.sfmfoodbank.org/",
+            Website: "https://www.sfmfoodbank.org/",
             Amount: 10000
           })
       .then(results => {
