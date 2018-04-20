@@ -10,6 +10,7 @@ import './CharityModal.css'
 import API from '../utils/API'
 
 class CharityModal extends React.Component {
+    
     state = {
         open: false,
         signUp: false,
