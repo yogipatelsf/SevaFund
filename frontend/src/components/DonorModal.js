@@ -53,7 +53,13 @@ class DonorModal extends React.Component {
             Password: this.password.value,
         }
         API.donorAuth(login)
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res)
+                // if (res.ok && window){ 
+                    // window.location.href="/api/projects"; 
+                    // or <Redrect to="/thankyou" /> if you are using react-router
+                // }
+            })
             .catch(err => console.log(err));
         console.log(login);
         this.loginForm.reset();
