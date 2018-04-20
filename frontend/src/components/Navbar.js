@@ -26,7 +26,7 @@ class Navbar extends Component {
               </a>
               <li>
                 <a href="/about" className="nav-words">
-                  Who we are
+                  Who We Are
                 </a>
               </li>
               <li>

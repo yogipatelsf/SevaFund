@@ -1,6 +1,11 @@
 a.nav-words,
 a.brand-logo {
-  color: black;
+    color: #9E9B8D;
+    font-family: "Lato, sans-serif";
+}
+
+a.nav-words {
+  font-size: 1.2rem;
 }
 
 #navRow.row, .sidenav {
