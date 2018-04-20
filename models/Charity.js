@@ -45,16 +45,14 @@ const Charity = mongoose.model("Charities", CharitySchema);
 module.exports = Charity;
 
 module.exports.createCharity = function(newCharity, callback){
-	bcrypt.genSalt(10, function(err, salt) {
 	    bcrypt.hash(newCharity.Password, salt, function(err, hash) {
 	        newCharity.Password = hash;
 	        newCharity.save(callback);
 	    });
-	});
 }
 
-module.exports.getCharityByCharityName = function(charityName, callback){
-	var query = {charityName: charityName};
+module.exports.getCharityByEmail = function(Email, callback){
+	var query = {Email: Email};
 	Charity.findOne(query, callback);
 }
 

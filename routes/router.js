@@ -57,19 +57,6 @@ const dbApi = app => {
 		let Password = req.body.password;
 		let passwordConfirm = req.confirmPassword;
 
-		// Validation
-		// req.checkBody('Email', 'Email is required').notEmpty();
-		// req.checkBody('Email', 'Email is not valid').isEmail();
-		// req.checkBody('password', 'Password is required').notEmpty();
-		// req.checkBody('passwordConfirm', 'Passwords do not match').equals(confirmPassword);
-
-		// let errors = req.validationErrors();
-
-		// if(errors){
-		// 	res.redirect('/donor/register',{
-		// 		errors:errors
-		// 	});
-		// } else {
 			let newDonor = new Donor ({
 				Email:Email,
 				Password: Password
@@ -81,8 +68,8 @@ const dbApi = app => {
 			});
 
 			req.flash('success_msg', 'You are registered and can now login');
-			res.redirect('/donors/login');
-		// }
+			res.redirect('/donor/login');
+		
 	});
 
 	app.post('/charity/register', (req, res) => {
@@ -95,7 +82,7 @@ const dbApi = app => {
 			const zipcode=  req.body.zipcode
 			const phoneNumber =  req.body.phoneNumber
 		//confirmPassword: confirmPassword for validation 
-			console.log(req.body)
+			console.log('register charity ', req.body)
 			let newCharity = new Charity ({
 				CharityName: charityName,
 				Email: email,

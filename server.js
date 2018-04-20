@@ -10,8 +10,6 @@ import flash from 'connect-flash';
 import session from'express-session';
 import expressValidator from'express-validator';
 import cookieParser from 'cookie-parser';
-import passport from'passport';
-import { LocalStrategy } from'passport-local';
 import env from './config/env';
 import routes from './routes';
 
@@ -92,8 +90,6 @@ app.use(function (req, res, next) {
 
 //******************************************** * Passport Authentication * ********************************************
 
-app.use(passport.initialize());
-app.use(passport.session());
 
 //******************************************** *  End of Middleware  * ********************************************
 
