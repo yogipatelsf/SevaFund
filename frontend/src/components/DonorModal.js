@@ -56,7 +56,7 @@ class DonorModal extends React.Component {
             .then(res => {
                 console.log(res)
                 // if (res.ok && window){ 
-                    // window.location.href="/api/projects"; 
+                    window.location.href="/api/projects"; 
                     // or <Redrect to="/thankyou" /> if you are using react-router
                 // }
             })

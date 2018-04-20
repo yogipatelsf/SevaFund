@@ -33,19 +33,20 @@ const passportApi = app => {
 //************************************* * Donor Auth * ******************************************
        
 
-        app.post('/donor/login',
-            //     res.send('donor login route hit');
-            //     // res.redirect('/')
-            // })
-                passport.authenticate('donor', {
-                            // successRedirect:'/', 
-                            failureRedirect:'/'
-                            // failureFlash: true
-                        }), 
-                        (req, res) => {
-                                res.send('donor login route hit');
-                                // res.redirect('/');
-                    });
+        app.post('/donor/login', (req,res) => {
+                req.flash('info')
+                res.send('donor login route hit');
+                // res.redirect('/')
+            })
+                // passport.authenticate('donor', {
+                //             successRedirect:'/', 
+                //             failureRedirect:'/',
+                //             failureFlash: true
+                //         }), 
+                //         (req, res) => {
+                //                 res.send('donor login route hit');
+                //                 // res.redirect('/');
+                //     });
 ////************************************* * Charity Auth * *************************************
 
     
