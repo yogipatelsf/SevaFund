@@ -70,7 +70,7 @@ class CharityModal extends React.Component {
             phoneNumber: this.phoneNumber.value,
             password: this.password.value,
             confirmPassword: this.password.value,
-            state: this.state.value,
+            state: this.states.value,
         }
         API.registerCharity(signUp)
             .then(res => console.log("charity registred successfully"))
@@ -171,7 +171,7 @@ class CharityModal extends React.Component {
                             />
                             <input ref={(input) => this.street = input} type="text" placeholder="Street name"/>
                             <input ref={(input) => this.city = input} type="text" placeholder="City"/>
-                            <input ref={(input) => this.state = input} type="text" placeholder="State"/>
+                            <input ref={(input) => this.states = input} type="text" placeholder="State"/>
                             <input ref={(input) => this.zipcode = input} type="text" placeholder="Zipcode"/>
                             <input 
                                 ref={(input) => this.phoneNumber = input} 
