@@ -1,4 +1,4 @@
-
+const jwt = require('jsonwebtoken');
 const  Donor = require('../models/Donor');
 const  Charity = require('../models/Charity');
 
@@ -7,15 +7,15 @@ const AuthApi = app => {
         
 //*************************************//Authentification//********************************************
         app.get('/donor/login', (req, res) => {
-           Donor.findAll({})
-                .then(doner => res.json(donor))
-                .catch(err => res.status(422).json(err))
+           res.json({
+               message: 'this route needs to be taking care of'
+           })
         })
 
         app.get('/charity/login', (req, res) => {
-            Charity.findAll({})
-                 .then(doner => res.json(donor))
-                 .catch(err => res.status(422).json(err))
+            res.json({
+                message: 'this route needs to be taking care of'
+            })
          })
           
         app.post('/donor/login', (req, res) => {
@@ -23,7 +23,7 @@ const AuthApi = app => {
                 Email: req.body.email,
                 Password: req.body.password
             }
-            console.log('Donor login ', donor)
+           
 
             Donor.getDonorByEmail(donor.Email, (err, user) => {
                 if (err) throw err;
@@ -31,7 +31,11 @@ const AuthApi = app => {
                 Donor.comparePassword(donor.Password, user.Password, (err, isMatch) => {
                     if (err) throw err;
                     if (isMatch){
-                        return console.log('Donor login success ', user);
+                        console.log('Donor login success ', user);
+                        jwt.sign({ user_id: user._id } ,'secretkey', (err, token) => {
+                            res.json({ token });
+                        })
+                        
                     } else if (!isMatch){
                         return console.log('Email or Password incorrect!');
                     }
@@ -44,14 +48,17 @@ const AuthApi = app => {
                 Email: req.body.email,
                 Password: req.body.password
             }
-            console.log('Charity login ', charity)
+           
 
             Charity.getCharityByEmail( charity.Email , (err, user) => {
                 if (err) throw err;
                 Charity.comparePassword(charity.Password, user.Password, (err, isMatch) => {
                     if (err) throw err;
                     if (isMatch){
-                        return console.log('Charity login success ', user);
+                        console.log('Charity login success ', user);
+                        jwt.sign({ user_id: user._id } ,'secretkey', (err, token) => {
+                            res.json({ token });
+                        })
                     } else if(!isMatch){
                         return console.log('Email or Password incorrect!')
                     }

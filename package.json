@@ -38,6 +38,7 @@
     "express-session": "^1.15.6",
     "express-validator": "^5.1.2",
     "helmet": "^3.8.0",
+    "jsonwebtoken": "^8.2.1",
     "material-ui": "^0.20.0",
     "mongoose": "^5.0.14",
     "morgan": "^1.8.2",
