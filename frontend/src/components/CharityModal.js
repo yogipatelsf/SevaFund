@@ -48,13 +48,13 @@ class CharityModal extends React.Component {
     //to pass the Login data
     logIn(event){
         event.preventDefault();
-        console.log("This is a charity logging in");
+        
         const login = {
             email: this.email.value,
             password: this.password.value,
         }
         API.charityAuth(login)
-        .then(res => console.log("charity signed in successfully ", res))
+        .then(res => console.log("charity signed in successfully with token attached ", res.data))
         .catch(err => console.log(err));
         console.log(login);
         this.loginForm.reset();
@@ -63,7 +63,7 @@ class CharityModal extends React.Component {
     //to pass the SignUp data
     createSignUp(event){
         event.preventDefault();
-        console.log("This is a charity signing up");
+        
         const signUp = {
             name: this.name.value,
             email: this.email.value,
@@ -75,11 +75,11 @@ class CharityModal extends React.Component {
             confirmPassword: this.password.value,
             state: this.states.value,
         }
-        console.log(signUp);
+        
         API.registerCharity(signUp)
-            .then(res => console.log("charity registred successfully"))
+            .then(res => console.log("charity registred successfully ", res))
             .catch(err => console.log(err));
-        // console.log(signUp);
+        
         this.signUpForm.reset();
     };
     
