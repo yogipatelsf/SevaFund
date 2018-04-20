@@ -95,16 +95,15 @@ const dbApi = app => {
 			const zipcode=  req.body.zipcode
 			const phoneNumber =  req.body.phoneNumber
 		//confirmPassword: confirmPassword for validation 
-	
+			console.log(req.body)
 			let newCharity = new Charity ({
 				CharityName: charityName,
 				Email: email,
 				Password: password,
 				CharityInfo: {
-					Street: street,
+					Address: street,
 					City: city,
-					
-					Zipcode: zipcode,
+					ZipCode: zipcode,
 					PhoneNumber: phoneNumber,
 					State: state
 				}				

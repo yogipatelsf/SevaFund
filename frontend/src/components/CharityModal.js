@@ -72,10 +72,11 @@ class CharityModal extends React.Component {
             confirmPassword: this.password.value,
             state: this.states.value,
         }
+        console.log(signUp);
         API.registerCharity(signUp)
             .then(res => console.log("charity registred successfully"))
             .catch(err => console.log(err));
-        console.log(signUp);
+        // console.log(signUp);
         this.signUpForm.reset();
     };
     
