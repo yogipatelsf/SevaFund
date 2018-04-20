@@ -1,13 +1,12 @@
 const paymentApi = require('./payment');
 const dbApi = require('./router');
-const passportApi = require('./passport');
+const AuthApi = require('./Auth');
 
 
 const configureRoutes = app => {
-
     paymentApi(app);
     dbApi(app);
-    passportApi(app);
+    AuthApi(app);
  // blockchainApi(app) // maybe!
 };
 

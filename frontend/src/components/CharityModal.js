@@ -53,6 +53,9 @@ class CharityModal extends React.Component {
             email: this.email.value,
             password: this.password.value,
         }
+        API.charityAuth(login)
+        .then(res => console.log("charity signed in successfully ", res))
+        .catch(err => console.log(err));
         console.log(login);
         this.loginForm.reset();
     };

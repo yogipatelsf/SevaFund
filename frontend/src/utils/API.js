@@ -21,9 +21,9 @@ export default {
     return axios.post("/charity/register", formData);
   },
   donorAuth: function(credentials) {
-    return axios.get("/donor/login", credentials);
+    return axios.post("/donor/login", credentials);
   },
   charityAuth: function(credentials) {
-    return axios.get("/charity/login", credentials);
+    return axios.post("/charity/login", credentials);
   },
 }
