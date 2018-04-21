@@ -29,6 +29,9 @@ const ProjectSchema = new Schema({
   image: {
     type: String
   },
+  website: {
+    type: String
+  },
   project: {
     type: String
   },
