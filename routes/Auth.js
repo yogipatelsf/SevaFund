@@ -3,8 +3,8 @@ const  Donor = require('../models/Donor');
 const  Charity = require('../models/Charity');
 
 
-const AuthApi = app => {  
-        
+const AuthApi = app => {
+
 //*************************************//Authentification//********************************************
 //Verify Token Middleware
 // function verifyToken(req, res, next) {
@@ -17,7 +17,7 @@ const AuthApi = app => {
 //     } else {
 //         res.sendStatus(403)
 //     }
-// }  
+// }
 
 // app.get('/donor/login', verifyToken, (req, res) => {
 //         jwt.verify(req.token, 'secretkey', (err, authdata) => {
@@ -30,7 +30,7 @@ const AuthApi = app => {
 //                 })
 //             }
 //         })
-           
+
 // })
 
 app.get('/charity/login', (req, res) => {
@@ -38,20 +38,20 @@ app.get('/charity/login', (req, res) => {
                 message: 'this route needs to be taking care of'
             })
     })
-          
+
         app.post('/donor/login', (req, res) => {
             const donor = {
                 Email: req.body.email,
                 Password: req.body.password
             }
-           
+
 
             Donor.getDonorByEmail(donor.Email, (err, user) => {
                 if(!user) {
-                 return res.json({ error: 'Please register first' })
+                 return res.status(210).json({ error: 'Please register first' })
                 }
                 if (err) throw err;
-        
+
                 Donor.comparePassword(donor.Password, user.Password, (err, isMatch) => {
                     if (err) throw err;
                     if (isMatch){
@@ -59,7 +59,7 @@ app.get('/charity/login', (req, res) => {
                         jwt.sign({ user_id: user._id } ,'secretkey', (err, token) => {
                             res.json({ token });
                         })
-                        
+
                     } else if (!isMatch){
                         res.json({ messsage: 'Email or Password incorrect!'})
                     }
@@ -72,7 +72,7 @@ app.get('/charity/login', (req, res) => {
                 Email: req.body.email,
                 Password: req.body.password
             }
-           
+
 
             Charity.getCharityByEmail( charity.Email , (err, user) => {
                 if(!user) {
@@ -93,8 +93,8 @@ app.get('/charity/login', (req, res) => {
             })
         })
 
-      
-//*************************************--login/logout routes--********************************************     
+
+//*************************************--login/logout routes--********************************************
 
         app.get('/logout', (req, res) => {
             req.logout();

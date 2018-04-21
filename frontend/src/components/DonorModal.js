@@ -13,13 +13,15 @@ class DonorModal extends React.Component {
         open: false,
         signUp: false,
         logIn: false,
-        status: ''
+        errorMessage: '',
+        status: '',
+        token: ''
     };
 
     handleClickOpen = () => {
         this.setState({ open: true });
     };
-    
+
     handleSignUpOpen = () => {
         this.setState({ signUp: true });
     }
@@ -40,21 +42,33 @@ class DonorModal extends React.Component {
 
     handleLogs = event => {
         const {name, value} = event.target;
-        
+
     }
 
     //to pass the Login data
     logIn(event){
         event.preventDefault();
-       
+
         const login = {
             email: this.email.value,
             password: this.password.value,
         }
         API.donorAuth(login)
-        .then(res => console.log("donor", res.data))
+        .then(res => {
+            if (res.status === 210) {
+                this.setState({errorMessage: res.data.error});
+            } else {
+                this.setState({
+                    errorMessage: '',
+                    logIn: false,
+                    token: res.data.token
+                });
+                localStorage.setItem('jwt', res.data.token);
+            }
+            console.log("donor", res.data)
+        })
         .catch(err => console.log(err));
-       
+
         this.loginForm.reset();
     }
 
@@ -65,16 +79,27 @@ class DonorModal extends React.Component {
          let signUpData = {
             email: this.email.value,
             password: this.password.value,
-            confirmPassword: this.password.value,
+            password_confirm: this.password_confirm.value,
         }
         API.registerDonor(signUpData)
-            .then(res => console.log("donor: ",res.data.message))
+            .then(res => {
+                console.log("donor: ",res.data.message);
+                if (res.status === 210) {
+                    this.setState({
+                        errorMessage: res.data.message
+                    });
+                } else {
+                    this.setState({
+                        signUp: false
+                    });
+                }
+            })
             .catch(err => console.log(err));
 
-        
+
         this.signUpForm.reset();
     }
-    
+
     render() {
         const styleTop = {
             borderTop: '5px solid #40c4ff',
@@ -90,7 +115,7 @@ class DonorModal extends React.Component {
             borderLeft: '5px solid #40c4ff',
             backgroundColor: 'white'
         }
-        
+
         const margin = {
             margin: 10,
             borderRadius: '50px',
@@ -111,7 +136,7 @@ class DonorModal extends React.Component {
                     >
                         Log In
                     </Button>
-                    
+
                     <Button
                         onClick={this.handleSignUpOpen}
                         variant="raised"
@@ -133,6 +158,7 @@ class DonorModal extends React.Component {
                 >
                 <DialogTitle style={styleTop}>Log In</DialogTitle>
                 <DialogContent style={styleBottom}>
+                    <h1>{this.state.errorMessage}</h1>
                     <form ref={(input) => this.loginForm = input} className="login-edit" onSubmit={(e) => this.logIn(e)}>
                         <input ref={(input) => this.email = input} type="text" placeholder="Email"/>
                         <input ref={(input) => this.password = input} type="password" placeholder="Password"/>
@@ -152,25 +178,26 @@ class DonorModal extends React.Component {
                 >
                     <DialogTitle style={styleTop}>Sign Up</DialogTitle>
                     <DialogContent style={styleBottom}>
+                        <h1>{this.state.errorMessage}</h1>
                         <form ref={(input) => this.signUpForm = input} className="signUp-edit" onSubmit={(e) => this.createSignUp(e)}>
-                           
-                            <input 
-                                ref={(input) => this.email = input} 
-                                type="text" placeholder="Email" 
+
+                            <input
+                                ref={(input) => this.email = input}
+                                type="text" placeholder="Email"
                             />
                             <input ref={(input) => this.password = input} type="password" placeholder="Password"/>
-                            <input ref={(input) => this.password = input} type="password" placeholder="Confirm password"/>
-                            
+                            <input ref={(input) => this.password_confirm = input} type="password" placeholder="Confirm password"/>
+
                             <br/><br/>
                             <p>By creating an account you agree to our <a href="/about">Terms & Privacy</a></p>
                             <button type="submit" className="signup-submit">Sign Up</button>
                         </form>
                     </DialogContent>
                 </Dialog>
-                
+
             </div>
         );
-    } 
+    }
 }
 
 export default DonorModal;
