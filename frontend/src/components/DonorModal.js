@@ -46,32 +46,32 @@ class DonorModal extends React.Component {
     //to pass the Login data
     logIn(event){
         event.preventDefault();
-        console.log("This is a donor logging in");
+       
         const login = {
             email: this.email.value,
             password: this.password.value,
         }
         API.donorAuth(login)
-        .then(res => console.log("donor signed in successfully ", res))
+        .then(res => console.log("donor signed in successfully with token attached ", res.data))
         .catch(err => console.log(err));
-        console.log(login);
+       
         this.loginForm.reset();
     }
 
     //to pass the SignUp data
     createSignUp(event){
         event.preventDefault();
-        console.log("This is a donor signing up");
+
          let signUpData = {
             email: this.email.value,
             password: this.password.value,
             confirmPassword: this.password.value,
         }
         API.registerDonor(signUpData)
-            .then(res => console.log("donor registred successfully"))
+            .then(res => console.log("donor registred successfully ", res.data.message))
             .catch(err => console.log(err));
 
-        console.log(signUpData);
+        
         this.signUpForm.reset();
     }
     

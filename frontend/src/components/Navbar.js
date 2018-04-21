@@ -48,7 +48,7 @@ class Navbar extends Component {
             <a href="/about">About</a>
           </li>
           <li>
-            <a href="/api/projects">Projects</a>
+            <a href="/projects">Projects</a>
           </li>
         </ul>
       </div>

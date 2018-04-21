@@ -129,7 +129,19 @@ app.use(function (req, res, next) {
           })
       .then(results => {
         console.log("Data saved in db!!!")
-      })  
+      })
+    
+    db.Project.create({
+            title: "OneApp",
+            image: "https://i.gyazo.com/aa975aff043989f8416b26566d2d370c.jpg",
+            project:
+              "OneApp is a modernized social network that helps users create a profile that serves as their college applications. The application is a gateway between schools and students to find the best match university.",
+            website: "https://cryptic-atoll-45563.herokuapp.com/",
+            Amount: 10000
+          })
+      .then(results => {
+        console.log("Data saved in db!!!")
+      })
 //************************************* Routes *************************************************** */
 
 configureServer(app);

@@ -1,4 +1,4 @@
-
+const jwt = require('jsonwebtoken');
 const  Donor = require('../models/Donor');
 const  Charity = require('../models/Charity');
 
@@ -6,24 +6,45 @@ const  Charity = require('../models/Charity');
 const AuthApi = app => {  
         
 //*************************************//Authentification//********************************************
-        app.get('/donor/login', (req, res) => {
-           Donor.findAll({})
-                .then(doner => res.json(donor))
-                .catch(err => res.status(422).json(err))
-        })
+//Verify Token Middleware
+// function verifyToken(req, res, next) {
+//     const bearerHeader = req.headers['authorization'];
+//     if(typeof bearerHeader !== 'undefined'){
+//         const bearer = bearerHeader.split(' ');
+//         const bearerToken = bearer[1];
+//         req.token = bearerToken;
+//         next();
+//     } else {
+//         res.sendStatus(403)
+//     }
+// }  
 
-        app.get('/charity/login', (req, res) => {
-            Charity.findAll({})
-                 .then(doner => res.json(donor))
-                 .catch(err => res.status(422).json(err))
-         })
+// app.get('/donor/login', verifyToken, (req, res) => {
+//         jwt.verify(req.token, 'secretkey', (err, authdata) => {
+//             if(err) {
+//                 res.sendStatus(403)
+//             }else {
+//                 res.json({
+//                     message: 'this route needs to be taking care of',
+//                     authdata
+//                 })
+//             }
+//         })
+           
+// })
+
+app.get('/charity/login', (req, res) => {
+            res.json({
+                message: 'this route needs to be taking care of'
+            })
+    })
           
         app.post('/donor/login', (req, res) => {
             const donor = {
                 Email: req.body.email,
                 Password: req.body.password
             }
-            console.log('Donor login ', donor)
+           
 
             Donor.getDonorByEmail(donor.Email, (err, user) => {
                 if (err) throw err;
@@ -31,9 +52,13 @@ const AuthApi = app => {
                 Donor.comparePassword(donor.Password, user.Password, (err, isMatch) => {
                     if (err) throw err;
                     if (isMatch){
-                        return console.log('Donor login success ', user);
+                        console.log('Donor login success ', user);
+                        jwt.sign({ user_id: user._id } ,'secretkey', (err, token) => {
+                            res.json({ token });
+                        })
+                        
                     } else if (!isMatch){
-                        return console.log('Email or Password incorrect!');
+                        res.json({ messsage: 'Email or Password incorrect!'})
                     }
                 })
             })
@@ -44,16 +69,19 @@ const AuthApi = app => {
                 Email: req.body.email,
                 Password: req.body.password
             }
-            console.log('Charity login ', charity)
+           
 
             Charity.getCharityByEmail( charity.Email , (err, user) => {
                 if (err) throw err;
                 Charity.comparePassword(charity.Password, user.Password, (err, isMatch) => {
                     if (err) throw err;
                     if (isMatch){
-                        return console.log('Charity login success ', user);
+                        console.log('Charity login success ', user);
+                        jwt.sign({ user_id: user._id } ,'secretkey', (err, token) => {
+                            res.json({ token });
+                        })
                     } else if(!isMatch){
-                        return console.log('Email or Password incorrect!')
+                        res.json({ messsage: 'Email or Password incorrect!'})
                     }
                 })
             })
@@ -75,3 +103,4 @@ const AuthApi = app => {
 }
 
 module.exports = AuthApi;
+

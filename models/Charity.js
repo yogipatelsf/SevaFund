@@ -45,7 +45,7 @@ const Charity = mongoose.model("Charities", CharitySchema);
 module.exports = Charity;
 
 module.exports.createCharity = function(newCharity, callback){
-	    bcrypt.hash(newCharity.Password, salt, function(err, hash) {
+	    bcrypt.hash(newCharity.Password, 10, function(err, hash) {
 	        newCharity.Password = hash;
 	        newCharity.save(callback);
 	    });
