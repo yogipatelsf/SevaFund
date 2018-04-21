@@ -68,7 +68,7 @@ class DonorModal extends React.Component {
             confirmPassword: this.password.value,
         }
         API.registerDonor(signUpData)
-            .then(res => console.log("donor registred successfully ", res.data))
+            .then(res => console.log("donor registred successfully ", res.data.message))
             .catch(err => console.log(err));
 
         
