@@ -48,6 +48,7 @@ class CharityModal extends React.Component {
         console.log("charity ", res.data);
         if (res.data.error) {
           alert(res.data.error);
+          window.location.href = "/";
         } else if (res.data.isLoggedIn === "success") {
           window.location.href = "/projects";
         } else if (res.data.isLoggedIn === "fail") {
@@ -76,9 +77,11 @@ class CharityModal extends React.Component {
     };
 
     API.registerCharity(signUp)
-      .then(res => console.log("charity: ", res.data.message))
+      .then(res => {
+        alert("Thank you, please go ahead and login!");
+        window.location.href = "/";
+      })
       .catch(err => console.log(err));
-    window.location.href = "/";
     this.signUpForm.reset();
   }
 
@@ -148,7 +151,7 @@ class CharityModal extends React.Component {
             >
               <input
                 ref={input => (this.email = input)}
-                type="text"
+                type="email"
                 placeholder="Email"
               />
               <input
@@ -225,11 +228,6 @@ class CharityModal extends React.Component {
                 type="password"
                 placeholder="Confirm Password"
               />
-
-              <p>
-                By creating an account you agree to our{" "}
-                <a href="/about">Terms & Privacy</a>
-              </p>
               <button type="submit" className="signup-submit">
                 Sign Up
               </button>
