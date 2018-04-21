@@ -111,7 +111,7 @@ class CharityModal extends React.Component {
             <div>
                 <div className="charity-login-signup-buttons">
                     <Button
-                        native
+                        
                         onClick={this.handleLogInOpen}
                         variant="raised"
                         color="primary"
@@ -122,7 +122,7 @@ class CharityModal extends React.Component {
                         Login
                     </Button>
                     <Button
-                        native
+                       
                         onClick={this.handleSignUpOpen}
                         variant="raised"
                         color="default"

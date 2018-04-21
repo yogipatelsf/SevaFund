@@ -103,7 +103,6 @@ class DonorModal extends React.Component {
             <div>
                 <div className="donor-login-signup-buttons">
                     <Button
-                        native
                         onClick={this.handleLogInOpen}
                         variant="raised"
                         color="primary"
@@ -114,7 +113,6 @@ class DonorModal extends React.Component {
                     </Button>
                     
                     <Button
-                        native
                         onClick={this.handleSignUpOpen}
                         variant="raised"
                         color="default"
