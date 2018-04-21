@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer className="page-footer light-blue accent-2">
+    <footer className="page-footer">
       <div className="container">
         <div className="row">
           <div className="col l6 s12">
