@@ -54,7 +54,7 @@ class CharityModal extends React.Component {
             password: this.password.value,
         }
         API.charityAuth(login)
-        .then(res => console.log("charity signed in successfully with token attached ", res.data))
+        .then(res => console.log("charity ", res.data))
         .catch(err => console.log(err));
         
         this.loginForm.reset();
@@ -77,7 +77,7 @@ class CharityModal extends React.Component {
         }
         
         API.registerCharity(signUp)
-            .then(res => console.log("charity registred successfully ", res.data.message))
+            .then(res => console.log("charity: ", res.data.message))
             .catch(err => console.log(err));
         
         this.signUpForm.reset();
@@ -111,7 +111,7 @@ class CharityModal extends React.Component {
             <div>
                 <div className="charity-login-signup-buttons">
                     <Button
-                        native
+                        
                         onClick={this.handleLogInOpen}
                         variant="raised"
                         color="primary"
@@ -122,7 +122,7 @@ class CharityModal extends React.Component {
                         Login
                     </Button>
                     <Button
-                        native
+                       
                         onClick={this.handleSignUpOpen}
                         variant="raised"
                         color="default"

@@ -52,7 +52,7 @@ class DonorModal extends React.Component {
             password: this.password.value,
         }
         API.donorAuth(login)
-        .then(res => console.log("donor signed in successfully with token attached ", res.data))
+        .then(res => console.log("donor", res.data))
         .catch(err => console.log(err));
        
         this.loginForm.reset();
@@ -68,7 +68,7 @@ class DonorModal extends React.Component {
             confirmPassword: this.password.value,
         }
         API.registerDonor(signUpData)
-            .then(res => console.log("donor registred successfully ", res.data.message))
+            .then(res => console.log("donor: ",res.data.message))
             .catch(err => console.log(err));
 
         
@@ -103,7 +103,6 @@ class DonorModal extends React.Component {
             <div>
                 <div className="donor-login-signup-buttons">
                     <Button
-                        native
                         onClick={this.handleLogInOpen}
                         variant="raised"
                         color="primary"
@@ -114,7 +113,6 @@ class DonorModal extends React.Component {
                     </Button>
                     
                     <Button
-                        native
                         onClick={this.handleSignUpOpen}
                         variant="raised"
                         color="default"
