@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import SignUpModal from "./SignUpModal.js";
 import "./Navbar.css";
 
 class Navbar extends Component {

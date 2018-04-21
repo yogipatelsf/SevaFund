@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Card from "./Card";
-import PropTypes from "prop-types";
 import API from "../utils/API"
 import "./CharityList.css";
 

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
-import CharityList from "./components/CharityList";
 import Footer from "./components/Footer";
 import PageRoute from "./components/PageRoute";
 

@@ -39,12 +39,6 @@ class CharityModal extends React.Component {
         const {name, value} = event.target;
         this.setState({ [name]: value });
     };
-
-    handleLogs = event => {
-        const {name, value} = event.target;
-        
-    };
-
     //to pass the Login data
     logIn(event){
         event.preventDefault();

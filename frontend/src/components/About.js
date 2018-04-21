@@ -56,6 +56,7 @@ const About = () => (
         <img
           className="z-depth-5"
           src="https://images.unsplash.com/photo-1468421870903-4df1664ac249?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3aa575e67b51bc49d1d37949b2189938&auto=format&fit=crop&w=800&q=60"
+          alt = "no data"
         />
       </div>
       <div className="fourth-text">
@@ -90,10 +91,12 @@ const About = () => (
         <a
           href="https://www.linkedin.com/in/sofiane-guerfi-0338a574"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img
             className="image-border z-depth-5"
-            src="https://media.licdn.com/dms/image/C4E03AQFdOyiFCPGKwQ/profile-displayphoto-shrink_800_800/0?e=1529006400&v=beta&t=ZhiKlTTDOLduAfk_2fmFDVNmBAMv07lVP_tz5LeTSOs"
+            src="https://media.licdn.com/dms/image/C4E03AQFdOyiFCPGKwQ/profile-displayphoto-shrink_800_800/0?e=1529006400&v=beta&t=ZhiKlTTDOLduAfk_2fmFDVNmBAMv07lVP_tz5LeTSOs" 
+            alt="Sofiane Guerfi"
           />
         </a>
         <p>Sofiane Guerfi</p>
@@ -102,28 +105,32 @@ const About = () => (
         <a
           href="https://www.linkedin.com/in/gerardo-fernandez-webdev/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img
             className="image-border z-depth-5"
             src="https://pbs.twimg.com/profile_images/924868643707432961/o_7HHI7G_400x400.jpg"
+            alt = "Gerardo Fernandez"
           />
         </a>
         <p>Gerardo Fernandez</p>
       </div>
       <div className="pic3">
-        <a href="https://www.linkedin.com/in/yogipatel" target="_blank">
+        <a href="https://www.linkedin.com/in/yogipatel" target="_blank" rel="noopener noreferrer">
           <img
             className="image-border z-depth-5"
             src="https://media.licdn.com/dms/image/C4E03AQH1mGQPM0xxug/profile-displayphoto-shrink_800_800/0?e=1529006400&v=beta&t=XEoPekiQ6dwEdZInAEaAiJ8u1JCP_J4kIw0EUWYkKAw"
+            alt = "Yogi Patel"
           />
         </a>
         <p>Yogi Patel</p>
       </div>
       <div className="pic4">
-        <a href="https://www.linkedin.com/in/sandon-du-eit/" target="_blank">
+        <a href="https://www.linkedin.com/in/sandon-du-eit/" target="_blank" rel="noopener noreferrer">
           <img
             className="image-border z-depth-5"
             src="https://media.licdn.com/dms/image/C5103AQEuTm2vBPU4Dw/profile-displayphoto-shrink_800_800/0?e=1529006400&v=beta&t=-x49hMLKvZbPLOeZ6GIgpuCL8Zbw9XalGRwpU-Of4Bk"
+            alt ="Sandon Du"
           />
         </a>
         <p>Sandon Du</p>
@@ -132,19 +139,26 @@ const About = () => (
         <a
           href="https://www.linkedin.com/in/sushant-srikrish-1b166752"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img
             className="image-border z-depth-5"
             src="https://media.licdn.com/dms/image/C5103AQEoDyxUuDELjw/profile-displayphoto-shrink_800_800/0?e=1529006400&v=beta&t=HmX3tMiZFtoiZzysxYSggp9FgVlPOluZAauio61pA9c"
+            alt = "Sushant Srikrish"
           />
         </a>
         <p>Sushant Srikrish</p>
       </div>
       <div className="pic6">
-        <a href="https://www.linkedin.com/in/bahadurghataorhe/" target="_blank">
+        <a href="https://www.linkedin.com/in/bahadurghataorhe/" 
+           target="_blank"
+           rel="noopener noreferrer"
+           >
+           
           <img
             className="image-border z-depth-5"
             src="https://media.licdn.com/dms/image/C5103AQGu1IZSZf0UxQ/profile-displayphoto-shrink_800_800/0?e=1529024400&v=beta&t=-LzmurIhAI9-8NTW5ce0vYqYnSjKV-qKvA5EyYRE4bU"
+            alt ="Bahadur Ghataorhe"
           />
         </a>
         <p>Bahadur Ghataorhe</p>
