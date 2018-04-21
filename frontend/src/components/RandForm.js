@@ -12,7 +12,7 @@ class RandForm extends Component {
       poNum: "",
       email: "",
       image: "",
-      project: "", 
+      project: "",
       website: ""
     };
   }
@@ -47,7 +47,7 @@ class RandForm extends Component {
     })
       .then(() => {
         console.log(this.state);
-        window.location.href="/projects"
+        window.location.href = "/projects";
       })
       .catch(err => {
         console.log(err);
