@@ -70,9 +70,11 @@ class DonorModal extends React.Component {
       confirmPassword: this.password.value
     };
     API.registerDonor(signUpData)
-      .then(res => console.log("donor: ", res.data.message))
+      .then(res => {
+        alert("Thank you, please go ahead and login!");
+        window.location.href = "/";
+      })
       .catch(err => console.log(err));
-    window.location.href = "/";
     this.signUpForm.reset();
   }
 
@@ -141,7 +143,7 @@ class DonorModal extends React.Component {
             >
               <input
                 ref={input => (this.email = input)}
-                type="text"
+                type="email"
                 placeholder="Email"
               />
               <input
@@ -175,7 +177,7 @@ class DonorModal extends React.Component {
             >
               <input
                 ref={input => (this.email = input)}
-                type="text"
+                type="email"
                 placeholder="Email"
               />
               <input
@@ -191,10 +193,6 @@ class DonorModal extends React.Component {
 
               <br />
               <br />
-              <p>
-                By creating an account you agree to our{" "}
-                <a href="/about">Terms & Privacy</a>
-              </p>
               <button type="submit" className="signup-submit">
                 Sign Up
               </button>

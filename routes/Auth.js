@@ -60,7 +60,7 @@ const AuthApi = app => {
           });
         } else if (!isMatch) {
           res.json({
-            messsage: "Email or Password incorrect!",
+            message: "Email or Password incorrect!",
             isLoggedIn: "fail"
           });
         }
@@ -93,7 +93,7 @@ const AuthApi = app => {
             });
           } else if (!isMatch) {
             res.json({
-              messsage: "Email or Password incorrect!",
+              message: "Email or Password incorrect!",
               isLoggedIn: "fail"
             });
           }
