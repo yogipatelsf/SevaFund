@@ -12,7 +12,8 @@ class RandForm extends Component {
       poNum: "",
       email: "",
       image: "",
-      project: ""
+      project: "", 
+      website: ""
     };
   }
 
@@ -41,7 +42,8 @@ class RandForm extends Component {
       poNum: this.state.poNum,
       email: this.state.email,
       image: this.state.image,
-      project: this.state.project
+      project: this.state.project,
+      website: this.state.website
     })
       .then(() => {
         console.log(this.state);
@@ -58,7 +60,8 @@ class RandForm extends Component {
       poNum: "",
       email: "",
       image: "",
-      project: ""
+      project: "",
+      website: ""
     });
   };
 
@@ -70,7 +73,8 @@ class RandForm extends Component {
       poNum,
       email,
       image,
-      project
+      project,
+      website
     } = this.state;
 
     return (
@@ -151,6 +155,20 @@ class RandForm extends Component {
                 placeholder="Image"
                 name="image"
                 value={image}
+                onChange={this.handleInputChange}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <label htmlFor="website">Website</label>
+              <input
+                id="website"
+                className="validate"
+                type="text"
+                placeholder="Your Website"
+                name="website"
+                value={website}
                 onChange={this.handleInputChange}
               />
             </div>
