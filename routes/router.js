@@ -67,8 +67,7 @@ const dbApi = app => {
 				console.log('Donor created in db with its hash', donor);
 			});
 
-			req.flash('success_msg', 'You are registered and can now login');
-			res.redirect('/donor/login');
+			res.json({ message: 'Donor registred successfuly' })
 		
 	});
 
@@ -100,8 +99,7 @@ const dbApi = app => {
 				if(err) throw err;
 				console.log('charity created in db', Charity);
 			});
-			req.flash('success_msg', 'You are registered and can now login');
-			res.redirect('/charity/login');		
+			res.json({ message: 'Charity registred successfuly' })
 	});
 //*********************************************************************************************************************
 

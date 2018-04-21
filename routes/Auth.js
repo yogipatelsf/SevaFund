@@ -6,17 +6,38 @@ const  Charity = require('../models/Charity');
 const AuthApi = app => {  
         
 //*************************************//Authentification//********************************************
-        app.get('/donor/login', (req, res) => {
-           res.json({
-               message: 'this route needs to be taking care of'
-           })
-        })
+//Verify Token Middleware
+// function verifyToken(req, res, next) {
+//     const bearerHeader = req.headers['authorization'];
+//     if(typeof bearerHeader !== 'undefined'){
+//         const bearer = bearerHeader.split(' ');
+//         const bearerToken = bearer[1];
+//         req.token = bearerToken;
+//         next();
+//     } else {
+//         res.sendStatus(403)
+//     }
+// }  
 
-        app.get('/charity/login', (req, res) => {
+// app.get('/donor/login', verifyToken, (req, res) => {
+//         jwt.verify(req.token, 'secretkey', (err, authdata) => {
+//             if(err) {
+//                 res.sendStatus(403)
+//             }else {
+//                 res.json({
+//                     message: 'this route needs to be taking care of',
+//                     authdata
+//                 })
+//             }
+//         })
+           
+// })
+
+app.get('/charity/login', (req, res) => {
             res.json({
                 message: 'this route needs to be taking care of'
             })
-         })
+    })
           
         app.post('/donor/login', (req, res) => {
             const donor = {
@@ -37,7 +58,7 @@ const AuthApi = app => {
                         })
                         
                     } else if (!isMatch){
-                        return console.log('Email or Password incorrect!');
+                        res.json({ messsage: 'Email or Password incorrect!'})
                     }
                 })
             })
@@ -60,7 +81,7 @@ const AuthApi = app => {
                             res.json({ token });
                         })
                     } else if(!isMatch){
-                        return console.log('Email or Password incorrect!')
+                        res.json({ messsage: 'Email or Password incorrect!'})
                     }
                 })
             })
@@ -82,3 +103,4 @@ const AuthApi = app => {
 }
 
 module.exports = AuthApi;
+
