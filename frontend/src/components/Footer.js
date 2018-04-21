@@ -21,7 +21,8 @@ const Footer = () => {
                 <a
                   className="grey-text text-lighten-3"
                   href="https://www.instagram.com/sevafund"
-                  target="_blank"
+                  target="_blank" 
+                  rel="noopener noreferrer"
                 >
                   <i className="fa fa-instagram" aria-hidden="true" />
                 </a>
@@ -31,6 +32,7 @@ const Footer = () => {
                   className="grey-text text-lighten-3"
                   href="https://www.facebook.com/sevafund/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fa fa-facebook" aria-hidden="true" />
                 </a>
@@ -40,6 +42,7 @@ const Footer = () => {
                   className="grey-text text-lighten-3"
                   href="https://twitter.com/sevafund"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fa fa-twitter" aria-hidden="true" />
                 </a>
@@ -49,6 +52,7 @@ const Footer = () => {
                   className="grey-text text-lighten-3"
                   href="https://www.linkedin.com/company/sevafund/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fa fa-linkedin" aria-hidden="true" />
                 </a>

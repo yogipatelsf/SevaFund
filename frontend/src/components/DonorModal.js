@@ -38,11 +38,6 @@ class DonorModal extends React.Component {
         this.setState({ [name]: value });
     };
 
-    handleLogs = event => {
-        const {name, value} = event.target;
-        
-    }
-
     //to pass the Login data
     logIn(event){
         event.preventDefault();
