@@ -47,6 +47,9 @@ app.get('/charity/login', (req, res) => {
            
 
             Donor.getDonorByEmail(donor.Email, (err, user) => {
+                if(!user) {
+                 return res.json({ error: 'Please register first' })
+                }
                 if (err) throw err;
         
                 Donor.comparePassword(donor.Password, user.Password, (err, isMatch) => {
@@ -72,6 +75,9 @@ app.get('/charity/login', (req, res) => {
            
 
             Charity.getCharityByEmail( charity.Email , (err, user) => {
+                if(!user) {
+                    return res.json({ error: 'Please register first' })
+                   }
                 if (err) throw err;
                 Charity.comparePassword(charity.Password, user.Password, (err, isMatch) => {
                     if (err) throw err;

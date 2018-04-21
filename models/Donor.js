@@ -33,7 +33,6 @@ module.exports.createDonor = function(newDonor, callback){
 	
     bcrypt.hash(newDonor.Password, 10, function(err, hash) {
         newDonor.Password = hash;
-        console.log('hash', hash);
         newDonor.save(callback);
     });
 
