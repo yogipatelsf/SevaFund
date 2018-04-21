@@ -87,7 +87,7 @@ class Card extends Component {
               -- Funded: {parseInt(funded, 10) / parseInt(Amount, 10) * 100}%
             </p>
             <a href={website} target="_blank">
-              <p>Please Visit Us!</p>
+              Please Visit Us!
             </a>
           </div>
         </div>
