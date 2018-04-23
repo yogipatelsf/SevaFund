@@ -29,10 +29,12 @@
     "express-validator": "^5.1.2",
     "jsonwebtoken": "^8.2.1",
     "material-ui": "^1.0.0-beta.41",
+    "moment": "^2.22.1",
     "mongoose": "^5.0.14",
     "path": "^0.12.7",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.1",
+    "react-moment": "^0.7.0",
     "react-router-dom": "^4.2.2",
     "request": "^2.85.0"
   }
