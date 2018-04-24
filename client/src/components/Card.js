@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NumberFormat from "react-number-format";
 import Checkout from "../Checkout";
 import "./Card.css";
+import Moment from "react-moment";
 
 class Card extends Component {
   //Needs State to capture the user input
@@ -29,7 +30,7 @@ class Card extends Component {
   };
 
   render() {
-    const { title, image, project, website, Amount } = this.props;
+    const { title, image, project, website, Amount, targetDate } = this.props;
     const { donation, funded } = this.state;
 
     return (
@@ -39,7 +40,7 @@ class Card extends Component {
             <img className="activator" src={image} alt={title} />
           </div>
           <div className="card-content">
-            <span className="card-title activator grey-text text-darken-4">
+            <span className="card-title activator grey-text text-darken-4 center-align">
               {title}
               <i className="material-icons right">more_vert</i>
             </span>
@@ -86,9 +87,14 @@ class Card extends Component {
               />{" "}
               -- Funded: {parseInt(funded, 10) / parseInt(Amount, 10) * 100}%
             </p>
-            <a href={website} target="_blank">
-              Please Visit Us!
-            </a>
+            <p className="left-align">
+              Target Fulfillment: <Moment format="YYYY/MM/DD" add={{ hours: 7 }}>{targetDate}</Moment> 
+            </p>
+            <p>
+              <a href={website} target="_blank">
+                Please Visit Us!
+              </a>
+            </p>
           </div>
         </div>
       </div>

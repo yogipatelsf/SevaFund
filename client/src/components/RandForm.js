@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import "./RandForm.css";
+import Moment from "react-moment";
 
 class RandForm extends Component {
   constructor(props) {
@@ -170,7 +171,7 @@ class RandForm extends Component {
                 id="targetDate"
                 className="validate"
                 type="text"
-                placeholder="Target Fulfillment Date"
+                placeholder="Target Fulfillment Date (YYYY-MM-DD)"
                 name="targetDate"
                 value={targetDate}
                 onChange={this.handleInputChange}
