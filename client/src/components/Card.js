@@ -10,7 +10,7 @@ class Card extends Component {
     super(props);
     this.state = {
       donation: 0,
-      funded: 0
+      funded: 0,
     };
   }
 
@@ -29,9 +29,28 @@ class Card extends Component {
     });
   };
 
+  expired = (date1,date2) => {
+    if (Moment(date1) > Moment(date2)) {
+      return true
+    }
+  }
+
+  convert = (date) => {
+    let targetDatePST = ""
+    return targetDatePST = <Moment format="YYYY/MM/DD" subtract={{ hours: 7 }}>date</Moment> 
+  }
+
   render() {
     const { title, image, project, website, Amount, targetDate } = this.props;
-    const { donation, funded } = this.state;
+    const { donation, funded, today } = this.state;
+    const newDate = new Date();
+    const todayDate = <Moment format="YYYY/MM/DD">{newDate}</Moment>
+    const test = <Moment format="X"> {newDate} </Moment>
+    // test = JSON.stringify(test)
+    console.log("todays date" + todayDate.props.children) 
+    console.log("unix time" + test)
+// (expired(todayDate.props.children, (converter({targetDate}) ? 'show' : 'disabled'))
+
 
     return (
       <div className="container">
@@ -53,7 +72,7 @@ class Card extends Component {
                       id="donate"
                       placeholder="$"
                       type="number"
-                      className="input-field"
+                      className= "input-field"
                       name="amount"
                       value={donation}
                       onChange={this.handleChange}
