@@ -13,7 +13,8 @@ class RandForm extends Component {
       email: "",
       image: "",
       project: "",
-      website: ""
+      website: "",
+      targetDate: ""
     };
   }
 
@@ -43,7 +44,8 @@ class RandForm extends Component {
       email: this.state.email,
       image: this.state.image,
       project: this.state.project,
-      website: this.state.website
+      website: this.state.website,
+      target: this.state.targetDate
     })
       .then(() => {
         console.log(this.state);
@@ -61,7 +63,8 @@ class RandForm extends Component {
       email: "",
       image: "",
       project: "",
-      website: ""
+      website: "",
+      targetDate: "",
     });
   };
 
@@ -74,7 +77,8 @@ class RandForm extends Component {
       email,
       image,
       project,
-      website
+      website,
+      targetDate
     } = this.state;
 
     return (
@@ -155,6 +159,20 @@ class RandForm extends Component {
                 placeholder="Image"
                 name="image"
                 value={image}
+                onChange={this.handleInputChange}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <label htmlFor="targetDate">Target Date</label>
+              <input
+                id="targetDate"
+                className="validate"
+                type="text"
+                placeholder="Target Fulfillment Date"
+                name="targetDate"
+                value={targetDate}
                 onChange={this.handleInputChange}
               />
             </div>
