@@ -28,7 +28,6 @@ class Card extends Component {
         parseInt(this.state.funded, 10) + parseInt(this.state.donation, 10)
     });
   };
-
   render() {
     const { title, image, project, website, Amount, targetDate } = this.props;
     const { donation, funded} = this.state;
@@ -45,10 +44,10 @@ class Card extends Component {
         mm = '0'+mm
     } 
     const today = mm + '/' + dd + '/' + yyyy; //to create todays date as a string
-    console.log(today)
-    let todayDate = <Moment parse="MM/DD/YYYY" format="YYYY/MM/DD">{today}</Moment>
+    let todayDate = <Moment parse="MM/DD/YYYY" format="YYYY/MM/DD">{today}</Moment>;
     let todayDateUnix = <Moment format="x">{today}</Moment>
     let targetDateUnix = <Moment format="x">{targetDate}</Moment>
+    let dates = [];
 
     return (
       <div className="container">
@@ -59,33 +58,39 @@ class Card extends Component {
           <div className="card-content">
             <span className="card-title activator grey-text text-darken-4 center-align">
               {title}
+              {console.log(todayDateUnix)}
+              {console.log(targetDateUnix)}
               <i className="material-icons right">more_vert</i>
             </span>
             <div className="container">
-              <div className="row">
-                <form onSubmit={this.handleSubmit}>
-                  <div className="col s6">
-                    <label htmlFor="donate">Enter Amount</label>
-                    <input
-                      id="donate"
-                      placeholder="$"
-                      type="number"
-                      className= "input-field disabled"
-                      name="amount"
-                      value={donation}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <div className="col s4">
-                    <Checkout
-                      className="waves-effect waves-light btn light-blue accent-2"
-                      name={"SevaFund"}
-                      description={title}
-                      amount={donation * 100}
-                    />
-                  </div>
-                </form>
-              </div>
+              {
+                (targetDateUnix) > (todayDateUnix) 
+                ?<div className="row">
+                  <form onSubmit={this.handleSubmit}>
+                    <div className="col s6">
+                      <label htmlFor="donate">Enter Amount</label>
+                      <input
+                        id="donate"
+                        placeholder="$"
+                        type="number"
+                        className= "input-field"
+                        name="amount"
+                        value={donation}
+                        onChange={this.handleChange}
+                      />
+                    </div>
+                    <div className="col s4">
+                      <Checkout
+                        className="waves-effect waves-light btn light-blue accent-2"
+                        name={"SevaFund"}
+                        description={title}
+                        amount={donation * 100}
+                      />
+                    </div>
+                  </form>
+                </div>
+                : <p> Project is past fulfillment date </p>
+              }
             </div>
           </div>
           <div className="card-reveal">
