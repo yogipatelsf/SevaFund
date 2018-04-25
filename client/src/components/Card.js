@@ -29,28 +29,26 @@ class Card extends Component {
     });
   };
 
-  expired = (date1,date2) => {
-    if (Moment(date1) > Moment(date2)) {
-      return true
-    }
-  }
-
-  convert = (date) => {
-    let targetDatePST = ""
-    return targetDatePST = <Moment format="YYYY/MM/DD" subtract={{ hours: 7 }}>date</Moment> 
-  }
-
   render() {
     const { title, image, project, website, Amount, targetDate } = this.props;
-    const { donation, funded, today } = this.state;
-    const newDate = new Date();
-    const todayDate = <Moment format="YYYY/MM/DD">{newDate}</Moment>
-    const test = <Moment format="X"> {newDate} </Moment>
-    // test = JSON.stringify(test)
-    console.log("todays date" + todayDate.props.children) 
-    console.log("unix time" + test)
-// (expired(todayDate.props.children, (converter({targetDate}) ? 'show' : 'disabled'))
+    const { donation, funded} = this.state;
+    //code for creating todays date as a string instead of object
+    let date = new Date();
+    let dd = date.getDate();
+    let mm = date.getMonth()+1; //January is 0!
+    let yyyy = date.getFullYear();
+    if(dd<10) {
+        dd = '0'+dd
+    } 
 
+    if(mm<10) {
+        mm = '0'+mm
+    } 
+    const today = mm + '/' + dd + '/' + yyyy; //to create todays date as a string
+    console.log(today)
+    let todayDate = <Moment parse="MM/DD/YYYY" format="YYYY/MM/DD">{today}</Moment>
+    let todayDateUnix = <Moment format="x">{today}</Moment>
+    let targetDateUnix = <Moment format="x">{targetDate}</Moment>
 
     return (
       <div className="container">
@@ -72,7 +70,7 @@ class Card extends Component {
                       id="donate"
                       placeholder="$"
                       type="number"
-                      className= "input-field"
+                      className= "input-field disabled"
                       name="amount"
                       value={donation}
                       onChange={this.handleChange}
