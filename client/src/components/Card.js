@@ -33,8 +33,8 @@ class Card extends Component {
     const { donation, funded} = this.state;
     const todayDateUnix = Date.now();
     const targetDateUnix = Date.parse(targetDate);
-    let dates = [];
-
+    console.log("today" + todayDateUnix)
+    console.log("target" + targetDateUnix)
     return (
       <div className="container">
         <div className="card">
@@ -73,7 +73,7 @@ class Card extends Component {
                     </div>
                   </form>
                 </div>
-                : <p> Project is past fulfillment date </p>
+                : <p className="center-align"> Project is past fulfillment date <Moment format="YYYY/MM/DD" add={{ hours: 7 }}>{targetDate}</Moment></p>
               }
             </div>
           </div>

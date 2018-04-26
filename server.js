@@ -42,7 +42,7 @@ db.Project.create({
           "With God’s grace, we seek to share Christ through a welcoming and nurturing community of faith, doing God’s work in the world.",
         website: "http://www.covenantpcsf.org/Ministries/food_pantry.php",
         Amount: 12500,
-        targetDate: "2018-04-30"
+        targetDate: "2018-04-25 00:00:00 GMT-0700"
       })
   .then(results => {
     console.log("Data saved in db!!!")
@@ -55,7 +55,7 @@ db.Project.create({
           "Project Open Hand’s mission is to nourish and engage our community by providing meals with love to the sick and the elderly. Watch our video celebrating Project Open Hand clients Orazgul and Mario and driver, 'Jedi.'",
         website: "https://www.openhand.org/",
         Amount: 9000,
-        targetDate: "2018-04-30"
+        targetDate: "2018-04-26 00:00:00 GMT-0700"
       })
   .then(results => {
     console.log("Data saved in db!!!")
@@ -68,7 +68,7 @@ db.Project.create({
           "Our mission is to end hunger in San Francisco and Marin. We envision a community where everyone is able to obtain enough nutritious food to support the health and well-being of themselves and their families.",
         website: "https://www.sfmfoodbank.org/",
         Amount: 10000,
-        targetDate: "2018-04-30"
+        targetDate: "2018-04-27 00:00:00 GMT-0700"
       })
   .then(results => {
     console.log("Data saved in db!!!")
@@ -81,7 +81,7 @@ db.Project.create({
         "OneApp is a modernized social network that helps users create a profile that serves as their college applications. The application is a gateway between schools and students to find the best match university.",
       website: "https://cryptic-atoll-45563.herokuapp.com/",
       Amount: 10000,
-      targetDate: "2018-04-30"
+      targetDate: "2018-04-28 00:00:00 GMT-0700"
     })
 .then(results => {
   console.log("Data saved in db!!!")
@@ -94,7 +94,7 @@ db.Project.create({
         "Semilla de Bienestar is a non-profit corporation considered in the category 501 (c) (3) whose commitment is to contribute to the development of healthy communities through information, education, training, awareness, orientation, empowerment, awareness and take of action before the complex situations and multiple challenges that cross the diverse communities in Puerto Rico and its wide diaspora. Our proposal reiterates a firm commitment to collaboration and mutual cooperation in projects, initiatives, laws and programs that seek the common good, justice and better living conditions for the diverse Latino and Hispanic community in the United State.",
       website: "http://semilladebienestar.org/",
       Amount: 10000,
-      targetDate: "2018-04-30"
+      targetDate: "2018-04-30 00:00:00 GMT-0700"
     })
 .then(results => {
   console.log("Data saved in db!!!")
