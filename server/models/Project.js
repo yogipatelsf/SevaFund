@@ -35,6 +35,9 @@ const ProjectSchema = new Schema({
   },
   DonorList: {
     type: Array
+  },
+  targetDate: {
+    type: Date,
   }
 });
 
