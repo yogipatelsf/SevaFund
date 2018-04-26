@@ -58,14 +58,13 @@ class Card extends Component {
           <div className="card-content">
             <span className="card-title activator grey-text text-darken-4 center-align">
               {title}
-              {console.log(todayDateUnix)}
-              {console.log(targetDateUnix)}
+              {console.log({todayDateUnix})}
               <i className="material-icons right">more_vert</i>
             </span>
             <div className="container">
               {
-                (targetDateUnix) > (todayDateUnix) 
-                ?<div className="row">
+                (true) 
+                ? <div className="row">
                   <form onSubmit={this.handleSubmit}>
                     <div className="col s6">
                       <label htmlFor="donate">Enter Amount</label>
