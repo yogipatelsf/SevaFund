@@ -33,8 +33,9 @@ class Card extends Component {
     const { donation, funded} = this.state;
     const todayDateUnix = Date.now();
     const targetDateUnix = Date.parse(targetDate);
-    console.log("today" + todayDateUnix)
-    console.log("target" + targetDateUnix)
+    console.log(todayDateUnix)
+    console.log({title})
+    console.log(targetDateUnix)
     return (
       <div className="container">
         <div className="card">
@@ -48,7 +49,7 @@ class Card extends Component {
             </span>
             <div className="container">
               {
-                (targetDateUnix > todayDateUnix)
+                (targetDateUnix >= todayDateUnix)
                 ? <div className="row">
                   <form onSubmit={this.handleSubmit}>
                     <div className="col s6">
@@ -94,7 +95,7 @@ class Card extends Component {
               -- Funded: {parseInt(funded, 10) / parseInt(Amount, 10) * 100}%
             </p>
             <p className="left-align">
-              Target Fulfillment: <Moment format="YYYY/MM/DD" add={{ hours: 7 }}>{targetDate}</Moment>
+              Target Fulfillment: <Moment format="YYYY/MM/DD">{targetDate}</Moment>
             </p>
             <p>
               <a href={website} target="_blank">
