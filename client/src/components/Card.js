@@ -49,7 +49,7 @@ class Card extends Component {
             <div className="container">
               {
                 (targetDateUnix > todayDateUnix)
-                ? <div className="row"> HERE
+                ? <div className="row">
                   <form onSubmit={this.handleSubmit}>
                     <div className="col s6">
                       <label htmlFor="donate">Enter Amount</label>
